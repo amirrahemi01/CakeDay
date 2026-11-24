@@ -16,24 +16,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#fff1ee;--card:#fff;--ink:#3a2631;--mute:#8f747f;--accent:#ff6f91;--line:#f6d9d4;--on:#fff;--r1:1.6rem;--r2:1.2rem;--r3:.9rem;--hf:Fredoka,Nunito,sans-serif;
- --soft:color-mix(in srgb,var(--accent) 14%,var(--card));--shadow:0 6px 20px color-mix(in srgb,var(--accent) 16%,transparent);--nb:max(env(safe-area-inset-bottom),.5rem)}
+ --soft:#ffe9ee;--shadow:0 2px 10px rgba(255,111,145,.10);--fabsh:0 4px 12px rgba(255,111,145,.35);--on16:rgba(255,255,255,.16);--redsoft:#ffe6e7;--sb:rgba(255,111,145,.4);--nb:max(env(safe-area-inset-bottom),.5rem)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;margin:0;overflow:hidden;overscroll-behavior:none;background:var(--bg)}
 body{color:var(--ink);font:16px/1.45 Nunito,system-ui,sans-serif;-webkit-user-select:none;user-select:none;transition:background-color .35s,color .35s}
 h1,h2,h3,.f,.chip,.badge,.stat b,.av,.go,.ghost{font-family:var(--hf)}
 button,input{font:inherit;color:inherit}button{cursor:pointer}a{color:inherit}
 svg.i{width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
-#app{position:relative;height:100dvh;max-width:46rem;margin:0 auto;display:flex;flex-direction:column;padding:max(env(safe-area-inset-top),.75rem) 1rem 0}
+#app{position:relative;height:100vh;height:100dvh;max-width:46rem;margin:0 auto;display:flex;flex-direction:column;padding:max(env(safe-area-inset-top),.75rem) 1rem 0}
 header{grid-area:hd;display:flex;align-items:center;gap:.5rem;padding-bottom:.75rem}
 h1{margin:0;font-size:1.6rem;font-weight:600;display:flex;align-items:center;gap:.5rem;flex:1}
 h1 svg{width:1.9rem;height:1.9rem;color:var(--accent)}
 .ib{width:2.5rem;height:2.5rem;border-radius:50%;border:0;background:var(--card);box-shadow:var(--shadow);display:grid;place-items:center;transition:transform .2s,background-color .35s}
 .ib:hover{transform:rotate(-8deg)}.ib:active{transform:scale(.9)}
 .view{grid-area:main;flex:1;min-height:0;display:flex;flex-direction:column}.view[hidden]{display:none}
-.scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:.25rem .1rem 4.6rem;-webkit-user-select:text;user-select:text}
+.scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:.6rem .6rem 4.6rem;margin:0 -.6rem;-webkit-user-select:text;user-select:text}
 .hero{position:relative;overflow:hidden;display:flex;align-items:center;gap:1rem;padding:1.1rem 1.2rem;border-radius:var(--r1);background:var(--accent);color:var(--on);box-shadow:var(--shadow);margin-bottom:1rem;transition:background-color .35s}
-.hero::after{content:"";position:absolute;right:-2rem;top:-2.5rem;width:9rem;height:9rem;border-radius:50%;background:color-mix(in srgb,var(--on) 16%,transparent)}
-.hero .t{flex:1;min-width:0;z-index:1}.hero small{opacity:.9;font-weight:700}
+.hero::after{content:"";position:absolute;right:-2rem;top:-2.5rem;width:9rem;height:9rem;border-radius:50%;background:var(--on16)}
+.hero .t{flex:1;min-width:0;z-index:1}.hero small{display:block;opacity:.9;font-weight:700}
 .hero .f{display:block;font-size:clamp(1.5rem,6vw,2.2rem);line-height:1.15;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .hero p{margin:.15rem 0 0;opacity:.95}
 .badge{z-index:1;flex:none;width:4.6rem;height:4.6rem;border-radius:50%;background:var(--on);color:var(--accent);display:grid;place-content:center;text-align:center;line-height:1}
@@ -73,7 +73,7 @@ ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
 .themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(8rem,1fr));gap:.6rem}
 .tile{position:relative;border:2px solid var(--line);background:none;border-radius:var(--r2);padding:.4rem;display:grid;gap:.35rem;text-align:left;transition:transform .2s,border-color .2s,box-shadow .2s}
 .tile:hover{transform:translateY(-2px)}.tile[aria-pressed=true]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
-.pv{display:block;height:3.4rem;border-radius:calc(var(--r3) - .1rem);background:var(--pb);padding:.4rem;border:1px solid color-mix(in srgb,var(--pi) 12%,transparent)}
+.pv{display:block;height:3.4rem;border-radius:calc(var(--r3) - .1rem);background:var(--pb);padding:.4rem;border:1px solid var(--pb2)}
 .pv i{display:block;border-radius:.35rem}.pv .a{height:.8rem;width:55%;background:var(--pa)}.pv .c{margin-top:.3rem;height:1.2rem;background:var(--pc)}
 .tn{font-size:.82rem;font-weight:700;padding:0 .2rem .1rem}
 .tile .ck{position:absolute;right:.7rem;top:.7rem;width:1.3rem;height:1.3rem;border-radius:50%;background:var(--accent);color:var(--on);display:grid;place-items:center;opacity:0;transform:scale(.5);transition:opacity .2s,transform .2s}
@@ -85,7 +85,7 @@ ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
 nav{grid-area:nav;display:flex;align-items:center;padding:.4rem 0 var(--nb)}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:.1rem;border:0;background:none;color:var(--mute);font-weight:700;font-size:.78rem;padding:.35rem .5rem;border-radius:var(--r3);transition:color .25s,background-color .25s}
 .tab[aria-current=true]{color:var(--accent)}.tab svg{transition:transform .3s}.tab[aria-current=true] svg{transform:translateY(-2px) scale(1.15)}
-.fab{position:absolute;z-index:5;right:1rem;bottom:calc(var(--nb) + 4.3rem);width:3.5rem;height:3.5rem;border-radius:50%;border:0;background:var(--accent);color:var(--on);display:flex;align-items:center;justify-content:center;gap:.5rem;box-shadow:0 8px 20px color-mix(in srgb,var(--accent) 45%,transparent);transition:transform .25s,background-color .35s,opacity .25s}
+.fab{position:absolute;z-index:5;right:1rem;bottom:calc(var(--nb) + 4.3rem);width:3.5rem;height:3.5rem;border-radius:50%;border:0;background:var(--accent);color:var(--on);display:flex;align-items:center;justify-content:center;gap:.5rem;box-shadow:var(--fabsh);transition:transform .25s,background-color .35s,opacity .25s}
 .fab:hover{transform:rotate(90deg)}.fab:active{transform:scale(.9)}.fab svg{width:1.6rem;height:1.6rem}.fab .lbl{display:none}
 footer{display:none;grid-area:ft}
 .enter .row,.enter .hero,.enter .stat,.enter .table,.enter .card{animation:rise .45s cubic-bezier(.2,.8,.3,1) both;animation-delay:calc(var(--i,0)*45ms)}
@@ -122,12 +122,37 @@ footer{display:none;grid-area:ft}
 .cs{display:flex;gap:.4rem}.cs button{width:1.6rem;height:1.6rem;border-radius:50%;border:0;transition:box-shadow .2s,transform .2s}.cs button:hover{transform:scale(1.1)}
 .cs button[aria-pressed=true]{box-shadow:0 0 0 2px var(--card),0 0 0 4px var(--accent)}
 .btns:has(#share[hidden]){grid-template-columns:1fr}
+input{font-size:16px}
+.ib{flex:none;padding:0;min-width:2.5rem;-webkit-appearance:none;appearance:none}
+.mode{position:relative;flex:none;display:block;width:3.7rem;height:2rem;padding:0;border:0;border-radius:2rem;background:var(--card);box-shadow:var(--shadow),inset 0 0 0 1px var(--line);-webkit-appearance:none;appearance:none;transition:background-color .35s}
+.mode .k{position:absolute;top:.25rem;left:.25rem;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--accent);transition:transform .3s cubic-bezier(.3,1.4,.5,1),background-color .35s}
+.mode svg{position:absolute;top:50%;width:.95rem;height:.95rem;margin-top:-.475rem;color:var(--mute);transition:color .3s}
+.mode .s{left:.55rem}.mode .m{right:.55rem}
+.mode[aria-checked=false] .s,.mode[aria-checked=true] .m{color:var(--on)}
+.mode[aria-checked=true] .k{transform:translateX(1.7rem)}
+.wish{padding:.4rem .95rem;font-size:.85rem;gap:.4rem}.wish svg{width:.95rem;height:.95rem}
+.wish.alt{background:var(--soft);color:var(--accent)}
+.hacts{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
+.hero .wish{margin:0;background:var(--on);color:var(--accent)}
+.hero .wish.alt{background:transparent;color:var(--on);box-shadow:inset 0 0 0 2px var(--on)}
+.racts{grid-column:2/-1;display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.4rem}
+.steps{list-style:none;counter-reset:s;display:grid;gap:.55rem;padding:0;margin:0}
+.steps li{counter-increment:s;display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;font-weight:400;color:var(--ink)}
+.steps li::before{content:counter(s);flex:none;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--soft);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:.8rem}
+.steps svg{width:1.1rem;height:1.1rem;vertical-align:-.2em;color:var(--accent)}
+.dangerb{color:#e5484d}.dangerb:hover{background:var(--redsoft)}.go:disabled{opacity:.45;pointer-events:none}
+.upd{position:fixed;z-index:150;left:0;right:0;margin:0 auto;width:max-content;max-width:calc(100vw - 1rem);top:max(env(safe-area-inset-top),.6rem);display:flex;align-items:center;gap:.7rem;background:var(--ink);color:var(--bg);padding:.45rem .5rem .45rem 1rem;border-radius:2rem;font-weight:700;font-size:.9rem;box-shadow:var(--shadow);animation:rise .4s both}
+.upd button{border:0;background:var(--accent);color:var(--on);border-radius:2rem;padding:.35rem .9rem;font-weight:700}
+.scroll::-webkit-scrollbar-thumb,#full::-webkit-scrollbar-thumb{background:transparent}
+.scroll.scrolling::-webkit-scrollbar-thumb,.scroll:hover::-webkit-scrollbar-thumb,#full.scrolling::-webkit-scrollbar-thumb,#full:hover::-webkit-scrollbar-thumb{background:var(--sb)}
+@supports not selector(::-webkit-scrollbar){.scroll,#full{scrollbar-color:transparent transparent}.scroll.scrolling,.scroll:hover,#full.scrolling,#full:hover{scrollbar-color:var(--sb) transparent}}
+@media(min-width:40rem){.table .row>.racts{grid-row:2;grid-column:2/-1}}
 /* Custom scrollbars (follow the active theme) */
-::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar{width:8px;height:8px}
 ::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--accent) 40%,transparent);background-clip:content-box;border:3px solid transparent;border-radius:12px}
+::-webkit-scrollbar-thumb{background:var(--sb);background-clip:content-box;border:2px solid transparent;border-radius:8px}
 ::-webkit-scrollbar-thumb:hover{background:var(--accent);background-clip:content-box}
-@supports not selector(::-webkit-scrollbar){*{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--accent) 45%,transparent) transparent}}
+@supports not selector(::-webkit-scrollbar){*{scrollbar-width:thin;scrollbar-color:var(--sb) transparent}}
 /* Dialogs */
 dialog{border:0;padding:0;background:none;overflow:visible;width:min(26rem,calc(100vw - 1.5rem));max-width:none;max-height:none;color:var(--ink)}
 dialog::backdrop{background:var(--scrim,rgba(0,0,0,.45));backdrop-filter:blur(3px)}
@@ -144,7 +169,7 @@ label,.lab{font-size:.8rem;font-weight:700;color:var(--mute);display:grid;gap:.3
 .sel{position:relative;min-width:0}
 .sel-btn{display:flex;justify-content:space-between;align-items:center;gap:.3rem;text-align:left}
 .sel-btn span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sel-btn svg{width:1rem;height:1rem;transition:transform .25s}.sel.open .sel-btn svg{transform:rotate(180deg)}
-.sel-list{position:absolute;z-index:20;left:0;min-width:100%;top:calc(100% + .35rem);max-height:13rem;overflow-y:auto;background:var(--card);border:2px solid var(--line);border-radius:var(--r3);box-shadow:0 12px 30px rgba(0,0,0,.18);padding:.3rem;opacity:0;visibility:hidden;transform:translateY(-6px) scale(.97);transform-origin:top;transition:opacity .18s,transform .18s,visibility .18s}
+.sel-list{position:absolute;z-index:20;left:0;min-width:100%;top:calc(100% + .35rem);max-height:13rem;overflow-y:auto;background:var(--card);border:2px solid var(--line);border-radius:var(--r3);box-shadow:0 6px 16px rgba(0,0,0,.14);padding:.3rem;opacity:0;visibility:hidden;transform:translateY(-6px) scale(.97);transform-origin:top;transition:opacity .18s,transform .18s,visibility .18s}
 .sel.up .sel-list{top:auto;bottom:calc(100% + .35rem);transform-origin:bottom;transform:translateY(6px) scale(.97)}
 .sel.open .sel-list{opacity:1;visibility:visible;transform:none}
 .sel-list button{display:flex;justify-content:space-between;align-items:center;gap:.5rem;width:100%;border:0;background:none;text-align:left;padding:.45rem .6rem;border-radius:.6rem;white-space:nowrap}
@@ -159,7 +184,7 @@ label,.lab{font-size:.8rem;font-weight:700;color:var(--mute);display:grid;gap:.3
 .seg button[aria-pressed=true]{background:var(--card);color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.1)}
 .note{margin:0;font-size:.85rem;color:var(--mute);font-weight:400}
 .conf{text-align:center;justify-items:center}.conf p{margin:0;color:var(--mute)}.conf .btns{width:100%}
-.conf .ring{width:3.4rem;height:3.4rem;border-radius:50%;background:color-mix(in srgb,#e5484d 15%,var(--card));color:#e5484d;display:grid;place-items:center}
+.conf .ring{width:3.4rem;height:3.4rem;border-radius:50%;background:var(--redsoft);color:#e5484d;display:grid;place-items:center}
 #toast{position:fixed;left:50%;bottom:calc(var(--nb) + 5rem);transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:.55rem 1rem;border-radius:2rem;font-weight:700;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:99}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -194,16 +219,14 @@ label,.lab{font-size:.8rem;font-weight:700;color:var(--mute);display:grid;gap:.3
 <div id="app">
   <header>
     <h1><svg class="i" data-i="cake"></svg>CakeDay</h1>
-    <button class="ib" id="theme" aria-label="Toggle light or dark mode"></button>
+    <button class="mode" id="theme" role="switch" aria-checked="false" aria-label="Dark mode"><span class="k"></span><svg class="i s" data-i="sun"></svg><svg class="i m" data-i="moon"></svg></button>
   </header>
 
   <section class="view" id="home">
-    <div class="scroll">
-      <div id="nudge"></div>
-      <div id="hero"></div>
-      <h2 id="up-h">Coming up</h2>
-      <ul id="upcoming"></ul>
-    </div>
+    <div id="nudge"></div>
+    <div id="hero"></div>
+    <h2 id="up-h">Coming up</h2>
+    <div class="scroll"><ul id="upcoming"></ul></div>
   </section>
 
   <section class="view" id="all" hidden>
@@ -242,11 +265,14 @@ label,.lab{font-size:.8rem;font-weight:700;color:var(--mute);display:grid;gap:.3
       <section class="card" style="--i:3"><h3>Install</h3>
         <p class="note" id="inst-t"></p>
         <button class="ghost" id="install" hidden><svg class="i" data-i="download"></svg>Install CakeDay</button>
+        <ol class="steps" id="inst-steps"></ol>
+        <p class="note" id="off-t"></p>
       </section>
       <section class="card" style="--i:4"><h3>Backup</h3>
         <div class="btns"><button class="ghost" id="export"><svg class="i" data-i="download"></svg>Export</button><button class="ghost" id="import"><svg class="i" data-i="upload"></svg>Import</button></div>
         <button class="ghost" id="ics"><svg class="i" data-i="cal"></svg>Export to calendar (.ics)</button>
         <p class="note" id="last-b"></p>
+        <button class="ghost dangerb" id="wipe-open"><svg class="i" data-i="trash"></svg>Delete all data</button>
         <input type="file" id="file" accept="application/json,.json" hidden>
         <p class="note" id="store"></p>
       </section>
@@ -298,6 +324,17 @@ label,.lab{font-size:.8rem;font-weight:700;color:var(--mute);display:grid;gap:.3
     <div class="btns"><button class="ghost" id="no">No</button><button class="go danger" id="yes">Yes, delete</button></div>
   </div>
 </dialog>
+<dialog id="wipe">
+  <div class="sheet conf">
+    <span class="ring"><svg class="i" data-i="trash"></svg></span>
+    <h2>Delete all data?</h2>
+    <p id="wipe-t"></p>
+    <button class="ghost" id="wipe-ex" style="width:100%"><svg class="i" data-i="download"></svg>Export a backup first</button>
+    <input class="field" id="wipe-in" placeholder="Type DELETE to confirm" autocomplete="off" autocapitalize="characters" style="text-align:center">
+    <div class="btns"><button class="ghost" id="wipe-no">Cancel</button><button class="go danger" id="wipe-yes" disabled>Delete all</button></div>
+  </div>
+</dialog>
+<div class="upd" id="upd" hidden><span>A new version is ready</span><button id="upd-b">Update</button></div>
 <div id="toast" role="status"></div>
 
 <script>
@@ -328,7 +365,8 @@ const P = {
   left:'<path d="m15 18-6-6 6-6"/>', right:'<path d="m9 18 6-6-6-6"/>', sort:'<path d="M3 6h18M6 12h12M10 18h4"/>',
   img:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>',
   share:'<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/>',
-  bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/>'
+  bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
+  ishare:'<path d="M12 3v12M8 7l4-4 4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>'
 };
 const ic = n => `<svg class="i" viewBox="0 0 24 24">${P[n]}</svg>`;
 const paintIcons = () => $$('svg[data-i]').forEach(s => { s.setAttribute('viewBox', '0 0 24 24'); s.innerHTML = P[s.dataset.i]; s.removeAttribute('data-i'); });
@@ -349,18 +387,24 @@ const THEMES = [
 const root = document.documentElement, sysDark = matchMedia('(prefers-color-scheme: dark)');
 const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : sysDark.matches;
 const curTheme = () => THEMES.find(t => t.id === pref('style', 'bubblegum')) || THEMES[0];
+const hex2 = h => { h = h.replace('#', ''); if (h.length === 3) h = [...h].map(c => c + c).join(''); return [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16)); };
+const mixc = (a, b, pct) => { const x = hex2(a), y = hex2(b); return '#' + x.map((v, i) => Math.round(v * pct / 100 + y[i] * (100 - pct) / 100).toString(16).padStart(2, '0')).join(''); };
+const rgba = (h, a) => { const [r, g, b] = hex2(h); return `rgba(${r},${g},${b},${a})`; };
 function applyTheme() {
   const t = curTheme(), dark = isDark(), p = dark ? t.d : t.l, s = root.style;
   K.forEach((k, i) => s.setProperty('--' + k, p[i]));
   t.r.forEach((v, i) => s.setProperty('--r' + (i + 1), v));
   s.setProperty('--hf', `"${t.hf}", Nunito, sans-serif`);
-  s.setProperty('--shadow', dark ? '0 6px 20px rgba(0,0,0,.3)' : '0 6px 20px color-mix(in srgb, var(--accent) 16%, transparent)');
-  s.setProperty('--scrim', dark ? 'rgba(0,0,0,.6)' : `color-mix(in srgb, ${p[2]} 42%, transparent)`);
+  s.setProperty('--soft', mixc(p[4], p[1], 14));
+  s.setProperty('--shadow', dark ? '0 2px 10px rgba(0,0,0,.25)' : `0 2px 10px ${rgba(p[4], .10)}`);
+  s.setProperty('--fabsh', `0 4px 12px ${rgba(p[4], .35)}`);
+  s.setProperty('--scrim', dark ? 'rgba(0,0,0,.6)' : rgba(p[2], .42));
+  s.setProperty('--on16', rgba(p[6], .16)); s.setProperty('--redsoft', mixc('#e5484d', p[1], 15)); s.setProperty('--sb', rgba(p[4], .4));
   s.colorScheme = dark ? 'dark' : 'light';
   $('meta[name=theme-color]').content = p[0];
-  $('#theme').innerHTML = ic(dark ? 'sun' : 'moon');
+  $('#theme').setAttribute('aria-checked', dark);
   $('#themes').innerHTML = THEMES.map(x => { const q = dark ? x.d : x.l;
-    return `<button class="tile" data-id="${x.id}" aria-pressed="${x.id === t.id}" style="--pb:${q[0]};--pc:${q[1]};--pa:${q[4]};--pi:${q[2]}">
+    return `<button class="tile" data-id="${x.id}" aria-pressed="${x.id === t.id}" style="--pb:${q[0]};--pc:${q[1]};--pa:${q[4]};--pi:${q[2]};--pb2:${rgba(q[2], .12)}">
       <span class="pv"><i class="a"></i><i class="c"></i></span><span class="tn">${x.name}</span><span class="ck">${ic('check')}</span></button>`; }).join('');
 }
 const setMode = v => { v === 'system' ? delete root.dataset.theme : root.dataset.theme = v; setPref('theme', v === 'system' ? null : v); applyTheme(); };
@@ -481,12 +525,13 @@ function fill(extraY) {
 let rows = [], tagF = null, booted = false;
 const av = r => r.photo ? `<span class="av"><img src="${esc(r.photo)}" alt=""></span>` : `<span class="av c${r.color ?? r.id % 5}">${esc(r.name.trim()[0].toUpperCase())}</span>`;
 const wishBtn = r => `<button class="wish ${r.wishedNow ? 'done' : ''}" data-wish="${r.id}">${r.wishedNow ? ic('check') + 'Wished' : 'Mark as wished'}</button>`;
+const shareBtn = r => `<button class="wish alt" data-share="${r.id}">${ic('share')}Share card</button>`;
 const ageTxt = r => r.age > 0 ? ` · turns ${r.age}${r.ms ? ` <span class="ms">${ic('star')}</span>` : ''}` : '';
 const row = (r, i) => `<li><div class="row" data-id="${r.id}" style="--i:${i}">${av(r)}
   <div class="nm"><b>${esc(r.name)}</b><small>${r.cal === 'greg' ? 'Gregorian' : 'Persian'}${ageTxt(r)}${r.tag ? `<span class="tag">${r.tag}</span>` : ''}</small></div>
   <span class="chip ${r.n === 0 ? 'now' : ''}">${when(r.n)}</span>
   <button class="del" data-id="${r.id}" aria-label="Delete ${esc(r.name)}">${ic('trash')}</button>
-  <div class="sub"><span class="bd">Born ${born(r)}</span><span>${r.a}</span><span>${r.b}</span>${r.note ? `<span class="nt">${esc(r.note)}</span>` : ''}${r.n === 0 ? wishBtn(r) : ''}</div></div></li>`;
+  <div class="sub"><span class="bd">Born ${born(r)}</span><span>${r.a}</span><span>${r.b}</span>${r.note ? `<span class="nt">${esc(r.note)}</span>` : ''}</div>${r.n === 0 ? `<div class="racts">${wishBtn(r)}${shareBtn(r)}</div>` : ''}</div></li>`;
 
 async function render() {
   const first = pref('cal', 'persian');
@@ -500,7 +545,7 @@ async function render() {
 
   const f = rows[0];
   $('#hero').innerHTML = f ? `<div class="hero" data-id="${f.id}"><div class="t"><small>${f.n === 0 ? 'Today' : 'Next up'}</small><b class="f">${esc(f.name)}</b><p>${f.a} · ${f.b}${ageTxt(f)}</p>
-    ${f.n === 0 ? wishBtn(f) + `<button class="wish" data-share="${f.id}">${ic('share')}Share card</button>` : ''}</div>
+    ${f.n === 0 ? `<div class="hacts">${wishBtn(f)}${shareBtn(f)}</div>` : ''}</div>
     <div class="badge">${f.n === 0 ? ic('cake') + '<span>Today</span>' : f.n === 1 ? '<span>Tomorrow</span>' : `<b>${f.n}</b><span>days</span>`}</div></div>`
     : `<div class="empty">${ic('cake')}<p>No birthdays yet.<br>Tap Add to create the first one.</p></div>`;
   $('#up-h').hidden = rows.length < 2;
@@ -665,6 +710,7 @@ function confetti() {
     dt < 2800 ? requestAnimationFrame(f) : c.remove();
   })(t0);
 }
+const rr = (x, a, b, w, h, r) => { x.moveTo(a + r, b); x.arcTo(a + w, b, a + w, b + h, r); x.arcTo(a + w, b + h, a, b + h, r); x.arcTo(a, b + h, a, b, r); x.arcTo(a, b, a + w, b, r); x.closePath(); };
 async function shareCard(r) {
   if (!r) return;
   try { await document.fonts.load('600 80px "Fredoka"'); } catch {}
@@ -673,7 +719,7 @@ async function shareCard(r) {
   x.fillStyle = v('--accent'); x.fillRect(0, 0, W, H);
   x.fillStyle = v('--on'); x.globalAlpha = .14; [[W, 0, 420], [0, H, 520], [140, 330, 120]].forEach(([a, b, q]) => { x.beginPath(); x.arc(a, b, q, 0, 7); x.fill(); }); x.globalAlpha = 1;
   x.textAlign = 'center'; x.font = `600 64px ${hf}`; x.fillText('Happy birthday', W / 2, 170);
-  x.fillStyle = v('--card'); x.beginPath(); x.roundRect(90, 300, 900, 760, 70); x.fill();
+  x.fillStyle = v('--card'); x.beginPath(); rr(x, 90, 300, 900, 760, 70); x.fill();
   x.fillStyle = v('--card'); x.beginPath(); x.arc(W / 2, 300, 150, 0, 7); x.fill();
   x.save(); x.beginPath(); x.arc(W / 2, 300, 128, 0, 7); x.clip();
   if (r.photo) { try { const im = new Image(); im.src = r.photo; await im.decode(); x.drawImage(im, W / 2 - 128, 172, 256, 256); } catch {} }
@@ -737,9 +783,16 @@ $('#notif').onclick = async () => {
 // ---------- Settings tab ----------
 let deferred;
 const standalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+const UA = navigator.userAgent, isIOS = /iphone|ipad|ipod/i.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1), isAnd = /android/i.test(UA);
 function paintInstall() {
+  const inst = standalone();
   $('#install').hidden = !deferred;
-  $('#inst-t').textContent = standalone() ? 'CakeDay is installed on this device.' : deferred ? 'Add CakeDay to your device and open it like an app.' : 'Use your browser menu: Install app or Add to Home Screen.';
+  $('#inst-t').textContent = inst ? 'CakeDay is installed on this device.' : 'Install CakeDay to open it like a normal app, even without internet.';
+  const steps = isIOS ? ['Open this page in <b>Safari</b>.', `Tap the Share button ${ic('ishare')} in the bottom bar.`, 'Scroll down and tap <b>Add to Home Screen</b>.', 'Tap <b>Add</b>. CakeDay appears on your home screen.']
+    : isAnd ? ['Tap the three-dot menu in your browser.', 'Tap <b>Install app</b> or <b>Add to Home screen</b>.', 'Confirm with <b>Install</b>.']
+    : ['Look for the install icon in the address bar.', 'Or open the browser menu and choose <b>Install CakeDay</b>.'];
+  $('#inst-steps').innerHTML = inst ? '' : steps.map(x => `<li><span>${x}</span></li>`).join('');
+  $('#off-t').textContent = !('serviceWorker' in navigator) ? 'Offline mode is not supported in this browser.' : navigator.serviceWorker.controller ? 'Offline mode is ready. Your birthdays are saved on this device.' : 'Open the app once while online so it can prepare offline mode.';
 }
 addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferred = e; paintInstall(); });
 addEventListener('appinstalled', () => { deferred = null; paintInstall(); });
@@ -806,7 +859,35 @@ function show(t) {
   if (t === 'calendar') { seg.mcal(); renderCal(); }
 }
 $$('.tab').forEach(b => b.onclick = () => show(b.dataset.tab));
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+// Offline + auto-update: a new version waits until you tap Update, so nothing is lost mid-edit.
+let updating = false;
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.addEventListener('controllerchange', () => { paintInstall(); if (updating) location.reload(); });
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    const offer = w => { if (!navigator.serviceWorker.controller) return; $('#upd').hidden = false; $('#upd-b').onclick = () => { updating = true; w.postMessage('SKIP_WAITING'); }; };
+    if (reg.waiting) offer(reg.waiting);
+    reg.addEventListener('updatefound', () => { const w = reg.installing; w && w.addEventListener('statechange', () => { if (w.state === 'installed') offer(w); }); });
+    const check = () => reg.update().catch(() => {});
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) check(); }); setInterval(check, 36e5); check();
+  }).catch(() => {});
+}
+document.addEventListener('scroll', e => {   // scrollbars appear only while scrolling
+  const t = e.target; if (t.nodeType !== 1 || !(t.classList.contains('scroll') || t.id === 'full')) return;
+  t.classList.add('scrolling'); clearTimeout(t._st); t._st = setTimeout(() => t.classList.remove('scrolling'), 900);
+}, true);
+
+// Delete all data (type-to-confirm)
+const wipe = $('#wipe');
+$('#wipe-open').onclick = () => { $('#wipe-in').value = ''; $('#wipe-yes').disabled = true; $('#wipe-t').textContent = `This permanently deletes ${rows.length} birthday${rows.length === 1 ? '' : 's'} and your reminder history from this device. It cannot be undone.`; wipe.showModal(); };
+$('#wipe-in').oninput = e => { $('#wipe-yes').disabled = e.target.value.trim().toUpperCase() !== 'DELETE'; };
+$('#wipe-no').onclick = () => closeAnim(wipe);
+$('#wipe-ex').onclick = () => exportJSON();
+$('#wipe-yes').onclick = async () => {
+  await run('readwrite', s => s.clear());
+  ['notified', 'lastBackup', 'snooze', 'confetti'].forEach(k => setPref(k, null)); setPref('firstUse', String(Date.now()));
+  try { const reg = await navigator.serviceWorker?.ready; (await reg.getNotifications())?.forEach(n => n.close()); } catch {}
+  closeAnim(wipe); cm.sel = null; await render(); refreshSettings(); toast('All data deleted');
+};
 document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
 setInterval(render, 18e5);
 
