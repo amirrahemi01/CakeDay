@@ -1,5 +1,5 @@
-const CACHE = 'cakeday-v10';
-const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png', 'icon-180.png'];
+const CACHE = 'cakeday-v11';
+const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png', 'icon-180.png', 'qrcode.min.js', 'jsqr.min.js'];
 
 // Install: cache the app shell. The new version then waits until the page says SKIP_WAITING (the Update button).
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL))));

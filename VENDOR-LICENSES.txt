@@ -1,0 +1,2 @@
+qrcode-generator 2.0.4 - MIT License - Copyright (c) 2009 Kazuhiko Arase - https://github.com/kazuhikoarase/qrcode-generator
+jsQR 1.4.0 - Apache License 2.0 - Copyright (c) Cosmo Wolfe - https://github.com/cozmo/jsQR

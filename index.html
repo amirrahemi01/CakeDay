@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CakeDay</title>
-<meta name="theme-color" content="#fff1ee">
+<meta name="theme-color" content="#f4f4f5">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="CakeDay">
@@ -13,13 +13,12 @@
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&family=Space+Grotesk:wght@500;600&family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff1ee;--card:#fff;--ink:#3a2631;--mute:#8f747f;--accent:#ff6f91;--line:#f6d9d4;--on:#fff;--r1:1.6rem;--r2:1.2rem;--r3:.9rem;--hf:Fredoka,Nunito,sans-serif;
- --soft:#ffe9ee;--shadow:0 2px 10px rgba(255,111,145,.10);--fabsh:0 4px 12px rgba(255,111,145,.35);--on16:rgba(255,255,255,.16);--redsoft:#ffe6e7;--sb:rgba(255,111,145,.4);--nb:max(env(safe-area-inset-bottom),.5rem)}
+:root{--bg:#f4f4f5;--card:#fff;--ink:#18181b;--mute:#71717a;--accent:#18181b;--line:#e4e4e7;--on:#fff;--r1:1rem;--r2:.8rem;--r3:.6rem;--hf:"Space Grotesk",Nunito,sans-serif;--soft:#dfdfe0;--shadow:0 2px 10px rgba(24,24,27,.10);--fabsh:0 4px 12px rgba(24,24,27,.35);--on16:rgba(255,255,255,.16);--redsoft:#fde8e8;--sb:rgba(24,24,27,.4);--nb:max(env(safe-area-inset-bottom),.5rem)}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;margin:0;overflow:hidden;overscroll-behavior:none;background:var(--bg)}
-body{color:var(--ink);font:16px/1.45 Nunito,system-ui,sans-serif;-webkit-user-select:none;user-select:none;transition:background-color .35s,color .35s}
+body{color:var(--ink);font:1rem/1.45 Nunito,system-ui,sans-serif;-webkit-user-select:none;user-select:none;transition:background-color .35s,color .35s}
 h1,h2,h3,.f,.chip,.badge,.stat b,.av,.go,.ghost{font-family:var(--hf)}
 button,input{font:inherit;color:inherit}button{cursor:pointer}a{color:inherit}
 svg.i{width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
@@ -32,7 +31,7 @@ h1 svg{width:1.9rem;height:1.9rem;color:var(--accent)}
 .view{grid-area:main;flex:1;min-height:0;display:flex;flex-direction:column}.view[hidden]{display:none}
 .scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:.6rem .6rem 4.6rem;margin:0 -.6rem;-webkit-user-select:text;user-select:text}
 .hero{position:relative;overflow:hidden;display:flex;align-items:center;gap:1rem;padding:1.1rem 1.2rem;border-radius:var(--r1);background:var(--accent);color:var(--on);box-shadow:var(--shadow);margin-bottom:1rem;transition:background-color .35s}
-.hero::after{content:"";position:absolute;right:-2rem;top:-2.5rem;width:9rem;height:9rem;border-radius:50%;background:var(--on16)}
+.hero::after{content:"";position:absolute;inset-inline-end:-2rem;top:-2.5rem;width:9rem;height:9rem;border-radius:50%;background:var(--on16)}
 .hero .t{flex:1;min-width:0;z-index:1}.hero small{display:block;opacity:.9;font-weight:700}
 .hero .f{display:block;font-size:clamp(1.5rem,6vw,2.2rem);line-height:1.15;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .hero p{margin:.15rem 0 0;opacity:.95}
@@ -71,12 +70,12 @@ ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
 .card{background:var(--card);border-radius:var(--r1);padding:1rem 1.1rem;box-shadow:var(--shadow);display:grid;gap:.8rem;align-content:start;transition:background-color .35s}
 .card h3{margin:0;font-size:1.05rem;font-weight:600}
 .themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(8rem,1fr));gap:.6rem}
-.tile{position:relative;border:2px solid var(--line);background:none;border-radius:var(--r2);padding:.4rem;display:grid;gap:.35rem;text-align:left;transition:transform .2s,border-color .2s,box-shadow .2s}
+.tile{position:relative;border:2px solid var(--line);background:none;border-radius:var(--r2);padding:.4rem;display:grid;gap:.35rem;text-align:start;transition:transform .2s,border-color .2s,box-shadow .2s}
 .tile:hover{transform:translateY(-2px)}.tile[aria-pressed=true]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
 .pv{display:block;height:3.4rem;border-radius:calc(var(--r3) - .1rem);background:var(--pb);padding:.4rem;border:1px solid var(--pb2)}
 .pv i{display:block;border-radius:.35rem}.pv .a{height:.8rem;width:55%;background:var(--pa)}.pv .c{margin-top:.3rem;height:1.2rem;background:var(--pc)}
 .tn{font-size:.82rem;font-weight:700;padding:0 .2rem .1rem}
-.tile .ck{position:absolute;right:.7rem;top:.7rem;width:1.3rem;height:1.3rem;border-radius:50%;background:var(--accent);color:var(--on);display:grid;place-items:center;opacity:0;transform:scale(.5);transition:opacity .2s,transform .2s}
+.tile .ck{position:absolute;inset-inline-end:.7rem;top:.7rem;width:1.3rem;height:1.3rem;border-radius:50%;background:var(--accent);color:var(--on);display:grid;place-items:center;opacity:0;transform:scale(.5);transition:opacity .2s,transform .2s}
 .tile .ck svg{width:.8rem;height:.8rem;stroke-width:3}.tile[aria-pressed=true] .ck{opacity:1;transform:none}
 .about{text-align:center;justify-items:center}.about svg.big{width:2.4rem;height:2.4rem;color:var(--accent)}.about p{margin:0}
 .credit{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;border-radius:2rem;background:var(--soft);color:var(--accent);font-weight:700;font-size:.9rem;text-decoration:none;transition:transform .2s}
@@ -85,7 +84,7 @@ ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
 nav{grid-area:nav;display:flex;align-items:center;padding:.4rem 0 var(--nb)}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:.1rem;border:0;background:none;color:var(--mute);font-weight:700;font-size:.78rem;padding:.35rem .5rem;border-radius:var(--r3);transition:color .25s,background-color .25s}
 .tab[aria-current=true]{color:var(--accent)}.tab svg{transition:transform .3s}.tab[aria-current=true] svg{transform:translateY(-2px) scale(1.15)}
-.fab{position:absolute;z-index:5;right:1rem;bottom:calc(var(--nb) + 4.3rem);width:3.5rem;height:3.5rem;border-radius:50%;border:0;background:var(--accent);color:var(--on);display:flex;align-items:center;justify-content:center;gap:.5rem;box-shadow:var(--fabsh);transition:transform .25s,background-color .35s,opacity .25s}
+.fab{position:absolute;z-index:5;inset-inline-end:1rem;bottom:calc(var(--nb) + 4.3rem);width:3.5rem;height:3.5rem;border-radius:50%;border:0;background:var(--accent);color:var(--on);display:flex;align-items:center;justify-content:center;gap:.5rem;box-shadow:var(--fabsh);transition:transform .25s,background-color .35s,opacity .25s}
 .fab:hover{transform:rotate(90deg)}.fab:active{transform:scale(.9)}.fab svg{width:1.6rem;height:1.6rem}.fab .lbl{display:none}
 footer{display:none;grid-area:ft}
 .enter .row,.enter .hero,.enter .stat,.enter .table,.enter .card{animation:rise .45s cubic-bezier(.2,.8,.3,1) both;animation-delay:calc(var(--i,0)*45ms)}
@@ -93,13 +92,13 @@ footer{display:none;grid-area:ft}
 @media(max-width:63.99rem){body[data-view=settings] .fab{opacity:0;pointer-events:none;transform:scale(.6)}}
 [hidden]{display:none!important}
 .row{cursor:pointer}.av{overflow:hidden}.av img{width:100%;height:100%;object-fit:cover}
-.tag{background:var(--soft);color:var(--accent);padding:0 .5rem;border-radius:1rem;font-size:.72rem;font-weight:700;margin-left:.4rem}
+.tag{background:var(--soft);color:var(--accent);padding:0 .5rem;border-radius:1rem;font-size:.72rem;font-weight:700;margin-inline-start:.4rem}
 .ms{display:inline-flex;align-items:center;color:var(--accent);vertical-align:-.15em}.ms svg{width:.9rem;height:.9rem;fill:currentColor}.hero .ms{color:var(--on)}
 .nt{flex-basis:100%;font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .wish{border:0;background:var(--accent);color:var(--on);border-radius:2rem;padding:.2rem .8rem;font-weight:700;font-size:.78rem;font-family:inherit;display:inline-flex;align-items:center;gap:.3rem;transition:transform .2s,background-color .25s}
 .wish svg{width:.85rem;height:.85rem}.wish:active{transform:scale(.94)}.wish.done{background:var(--soft);color:var(--accent)}
 .hero .wish{background:var(--on);color:var(--accent);margin:.6rem .4rem 0 0}.hero .wish.done{opacity:.85}
-.nudge{display:flex;align-items:center;gap:.7rem;background:var(--card);border-radius:var(--r2);padding:.7rem .9rem;box-shadow:var(--shadow);margin-bottom:.8rem;border-left:4px solid var(--accent);color:var(--accent)}
+.nudge{display:flex;align-items:center;gap:.7rem;background:var(--card);border-radius:var(--r2);padding:.7rem .9rem;box-shadow:var(--shadow);margin-bottom:.8rem;border-inline-start:4px solid var(--accent);color:var(--accent)}
 .nudge p{margin:0;flex:1;font-size:.9rem;color:var(--ink)}.nudge button{border:0;background:var(--soft);color:var(--accent);font-weight:700;border-radius:2rem;padding:.35rem .8rem}
 .fbar{display:flex;gap:.5rem;align-items:center;margin-bottom:.75rem;min-width:0}
 .chips{display:flex;gap:.4rem;overflow-x:auto;flex:1;min-width:0;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
@@ -122,7 +121,7 @@ footer{display:none;grid-area:ft}
 .cs{display:flex;gap:.4rem}.cs button{width:1.6rem;height:1.6rem;border-radius:50%;border:0;transition:box-shadow .2s,transform .2s}.cs button:hover{transform:scale(1.1)}
 .cs button[aria-pressed=true]{box-shadow:0 0 0 2px var(--card),0 0 0 4px var(--accent)}
 .btns:has(#share[hidden]){grid-template-columns:1fr}
-input{font-size:16px}
+input{font-size:max(16px,1rem)}
 .ib{flex:none;padding:0;min-width:2.5rem;-webkit-appearance:none;appearance:none}
 .mode{position:relative;flex:none;display:block;width:3.7rem;height:2rem;padding:0;border:0;border-radius:2rem;background:var(--card);box-shadow:var(--shadow),inset 0 0 0 1px var(--line);-webkit-appearance:none;appearance:none;transition:background-color .35s}
 .mode .k{position:absolute;top:.25rem;left:.25rem;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--accent);transition:transform .3s cubic-bezier(.3,1.4,.5,1),background-color .35s}
@@ -147,6 +146,28 @@ input{font-size:16px}
 .scroll.scrolling::-webkit-scrollbar-thumb,.scroll:hover::-webkit-scrollbar-thumb,#full.scrolling::-webkit-scrollbar-thumb,#full:hover::-webkit-scrollbar-thumb{background:var(--sb)}
 @supports not selector(::-webkit-scrollbar){.scroll,#full{scrollbar-color:transparent transparent}.scroll.scrolling,.scroll:hover,#full.scrolling,#full:hover{scrollbar-color:var(--sb) transparent}}
 @media(min-width:40rem){.table .row>.racts{grid-row:2;grid-column:2/-1}}
+textarea{font:inherit;color:inherit;font-size:max(16px,1rem)}textarea.field{resize:none}
+[lang=fa] body{font-family:Vazirmatn,Nunito,system-ui,sans-serif}
+.mode{direction:ltr}
+[dir=rtl] .cal-head .ib svg{transform:scaleX(-1)}
+#toast button{margin-inline-start:.8rem;border:0;background:var(--accent);color:var(--on);border-radius:2rem;padding:.2rem .75rem;font-weight:700}
+#toast.act{pointer-events:auto}
+.qr{background:#fff;padding:.8rem;border-radius:var(--r2);width:min(100%,18rem);margin:0 auto}.qr svg{display:block;width:100%;height:auto}
+.cam{border-radius:var(--r2);overflow:hidden;background:#000}.cam video{display:block;width:100%;max-height:50vh;object-fit:cover}
+#lock{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:var(--bg);color:var(--ink)}
+#lock[open]{display:flex;align-items:center;justify-content:center;animation:fade .25s}
+.lockbox{width:min(20rem,86vw);display:grid;gap:1rem;justify-items:center;text-align:center}
+.lockbox h2{margin:0;color:var(--ink);font-size:1.4rem}.lockbox svg.big{width:2.6rem;height:2.6rem;color:var(--accent)}
+.pins{display:flex;gap:.9rem;direction:ltr}.pins i{width:.9rem;height:.9rem;border-radius:50%;border:2px solid var(--accent);transition:background-color .15s,transform .15s}.pins i.on{background:var(--accent);transform:scale(1.1)}
+.pins.shake{animation:shake .4s}@keyframes shake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.pad{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;width:100%;direction:ltr}
+.pad button{aspect-ratio:1;border:0;border-radius:50%;background:var(--card);box-shadow:var(--shadow);font-size:1.5rem;font-weight:600;font-family:var(--hf);display:grid;place-items:center;transition:transform .15s,background-color .15s}
+.pad button:active{transform:scale(.92);background:var(--soft)}.pad button svg{width:1.4rem;height:1.4rem}.pad .x{visibility:hidden}
+.linkb{background:none;border:0;color:var(--mute);font-weight:700;font-size:.85rem;text-decoration:underline}
+[data-motion=reduce] *,[data-motion=reduce] ::before,[data-motion=reduce] ::after{animation:none!important;transition:none!important}
+[data-contrast=high] :is(.card,.row,.stat,.table,.sheet,.search,.field,.sel-btn,.ghost,.chips button,.sortb,.cell,.tile,.mode,.ib,.pad button){outline:1.5px solid var(--ink);outline-offset:-1.5px}
+[data-sb=always] .scroll::-webkit-scrollbar-thumb,[data-sb=always] #full::-webkit-scrollbar-thumb{background:var(--sb)}
+@supports not selector(::-webkit-scrollbar){[data-sb=always] .scroll,[data-sb=always] #full{scrollbar-color:var(--sb) transparent}}
 /* Custom scrollbars (follow the active theme) */
 ::-webkit-scrollbar{width:8px;height:8px}
 ::-webkit-scrollbar-track{background:transparent}
@@ -167,12 +188,12 @@ label,.lab{font-size:.8rem;font-weight:700;color:var(--mute);display:grid;gap:.3
 .field:focus,.sel.open .sel-btn,.sel-btn:focus-visible{border-color:var(--accent)}
 .grid3{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}.grid3>:first-child{grid-column:1/-1}
 .sel{position:relative;min-width:0}
-.sel-btn{display:flex;justify-content:space-between;align-items:center;gap:.3rem;text-align:left}
+.sel-btn{display:flex;justify-content:space-between;align-items:center;gap:.3rem;text-align:start}
 .sel-btn span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sel-btn svg{width:1rem;height:1rem;transition:transform .25s}.sel.open .sel-btn svg{transform:rotate(180deg)}
-.sel-list{position:absolute;z-index:20;left:0;min-width:100%;top:calc(100% + .35rem);max-height:13rem;overflow-y:auto;background:var(--card);border:2px solid var(--line);border-radius:var(--r3);box-shadow:0 6px 16px rgba(0,0,0,.14);padding:.3rem;opacity:0;visibility:hidden;transform:translateY(-6px) scale(.97);transform-origin:top;transition:opacity .18s,transform .18s,visibility .18s}
+.sel-list{position:absolute;z-index:20;inset-inline-start:0;min-width:100%;top:calc(100% + .35rem);max-height:13rem;overflow-y:auto;background:var(--card);border:2px solid var(--line);border-radius:var(--r3);box-shadow:0 6px 16px rgba(0,0,0,.14);padding:.3rem;opacity:0;visibility:hidden;transform:translateY(-6px) scale(.97);transform-origin:top;transition:opacity .18s,transform .18s,visibility .18s}
 .sel.up .sel-list{top:auto;bottom:calc(100% + .35rem);transform-origin:bottom;transform:translateY(6px) scale(.97)}
 .sel.open .sel-list{opacity:1;visibility:visible;transform:none}
-.sel-list button{display:flex;justify-content:space-between;align-items:center;gap:.5rem;width:100%;border:0;background:none;text-align:left;padding:.45rem .6rem;border-radius:.6rem;white-space:nowrap}
+.sel-list button{display:flex;justify-content:space-between;align-items:center;gap:.5rem;width:100%;border:0;background:none;text-align:start;padding:.45rem .6rem;border-radius:.6rem;white-space:nowrap}
 .sel-list button:hover{background:var(--soft)}.sel-list button.on{color:var(--accent);font-weight:700}
 .go{border:0;border-radius:var(--r3);background:var(--accent);color:var(--on);padding:.8rem;font-size:1.05rem;font-weight:500;transition:transform .2s,background-color .35s}.go:active{transform:scale(.97)}
 .go.danger{background:#e5484d;color:#fff}
@@ -191,7 +212,7 @@ label,.lab{font-size:.8rem;font-weight:700;color:var(--mute);display:grid;gap:.3
 @media(min-width:40rem){
  .table{--cols:auto 1fr 1.8fr auto auto}.thead,.table .row{display:grid;grid-template-columns:var(--cols);gap:.75rem;align-items:center}
  .table .row>*{grid-row:1}.table .nm{grid-column:2}.table .sub{grid-column:3}.table .chip{grid-column:4}.table .del{grid-column:5}
- .thead span:first-child{width:2.6rem}.thead span:nth-child(4){text-align:right}
+ .thead span:first-child{width:2.6rem}.thead span:nth-child(4){text-align:end}
  .set-grid{grid-template-columns:1fr 1fr}.card.wide,.card.about{grid-column:1/-1}
 }
 /* Large screens: sidebar + roomy content */
@@ -252,40 +273,63 @@ label,.lab{font-size:.8rem;font-weight:700;color:var(--mute);display:grid;gap:.3
         <div class="themes" id="themes"></div>
         <div class="lab">Mode<div class="seg" id="seg-theme"><button data-v="system">System</button><button data-v="light">Light</button><button data-v="dark">Dark</button></div></div>
       </section>
-      <section class="card" style="--i:1"><h3>Calendar</h3>
+      <section class="card" style="--i:1"><h3>Language and calendar</h3>
+        <div class="lab">Language<div class="seg" id="seg-lang"><button data-v="en">English</button><button data-v="fa">فارسی</button></div></div>
         <div class="lab">Default calendar<div class="seg" id="seg-cal"><button data-v="persian">Persian (Jalali)</button><button data-v="greg">Gregorian</button></div></div>
         <p class="note">Used for new birthdays and shown first in every date.</p>
       </section>
       <section class="card" style="--i:2"><h3>Reminders</h3>
         <div class="lab">Default reminder<div class="seg wrap" id="seg-lead"><button data-v="off">Off</button><button data-v="0">Same day</button><button data-v="1">1 day</button><button data-v="3">3 days</button><button data-v="7">1 week</button></div></div>
+        <div class="lab">Reminder time<input class="field" type="time" id="rtime" value="09:00"></div>
         <button class="ghost" id="notif" hidden><svg class="i" data-i="bell"></svg>Enable notifications</button>
         <p class="note" id="notif-t"></p>
         <p class="note">Each birthday can override this in its edit form.</p>
       </section>
-      <section class="card" style="--i:3"><h3>Install</h3>
+      <section class="card" style="--i:3"><h3>Accessibility</h3>
+        <div class="lab">Text size<div class="seg" id="seg-size"><button data-v="1">Normal</button><button data-v="1.125">Large</button><button data-v="1.25">Extra large</button></div></div>
+        <div class="lab">Motion<div class="seg" id="seg-motion"><button data-v="system">Follow system</button><button data-v="reduce">Reduce</button></div></div>
+        <div class="lab">Contrast<div class="seg" id="seg-contrast"><button data-v="standard">Standard</button><button data-v="high">High</button></div></div>
+        <div class="lab">Scrollbars<div class="seg" id="seg-sb"><button data-v="auto">Auto-hide</button><button data-v="always">Always show</button></div></div>
+      </section>
+      <section class="card" style="--i:4"><h3>App lock</h3>
+        <p class="note">Protect CakeDay with a 4-digit PIN. This is a screen lock for casual privacy; your data is not encrypted.</p>
+        <button class="ghost" id="lock-set"><svg class="i" data-i="lock"></svg>Set up app lock</button>
+        <div class="btns" id="lock-btns" hidden><button class="ghost" id="lock-change">Change PIN</button><button class="ghost" id="lock-off">Turn off</button></div>
+        <button class="ghost" id="lock-bio" hidden><svg class="i" data-i="scan"></svg><span id="bio-l">Use Face ID or fingerprint</span></button>
+      </section>
+      <section class="card" style="--i:5"><h3>Transfer</h3>
+        <p class="note">Move your birthdays to another device. No server is involved.</p>
+        <div class="btns"><button class="ghost" id="t-send"><svg class="i" data-i="upload"></svg>Send</button><button class="ghost" id="t-recv"><svg class="i" data-i="download"></svg>Receive</button></div>
+      </section>
+      <section class="card" style="--i:6"><h3>Backup</h3>
+        <div class="btns"><button class="ghost" id="export"><svg class="i" data-i="download"></svg>Export</button><button class="ghost" id="import"><svg class="i" data-i="upload"></svg>Import</button></div>
+        <button class="ghost" id="ics"><svg class="i" data-i="cal"></svg>Export to calendar (.ics)</button>
+        <button class="ghost" id="vcf"><svg class="i" data-i="users"></svg>Import from contacts (.vcf)</button>
+        <input type="file" id="file" accept="application/json,.json" hidden>
+        <input type="file" id="vfile" accept=".vcf,text/vcard,text/x-vcard,text/directory" hidden>
+        <p class="note" id="store"></p>
+        <p class="note" id="last-b"></p>
+        <button class="ghost dangerb" id="wipe-open"><svg class="i" data-i="trash"></svg>Delete all data</button>
+      </section>
+      <section class="card" style="--i:7"><h3>Install</h3>
         <p class="note" id="inst-t"></p>
         <button class="ghost" id="install" hidden><svg class="i" data-i="download"></svg>Install CakeDay</button>
         <ol class="steps" id="inst-steps"></ol>
         <p class="note" id="off-t"></p>
       </section>
-      <section class="card" style="--i:4"><h3>Backup</h3>
-        <div class="btns"><button class="ghost" id="export"><svg class="i" data-i="download"></svg>Export</button><button class="ghost" id="import"><svg class="i" data-i="upload"></svg>Import</button></div>
-        <button class="ghost" id="ics"><svg class="i" data-i="cal"></svg>Export to calendar (.ics)</button>
-        <p class="note" id="last-b"></p>
-        <button class="ghost dangerb" id="wipe-open"><svg class="i" data-i="trash"></svg>Delete all data</button>
-        <input type="file" id="file" accept="application/json,.json" hidden>
-        <p class="note" id="store"></p>
-      </section>
-      <section class="card about" style="--i:4">
+      <section class="card about" style="--i:8">
         <svg class="i big" data-i="cake"></svg>
         <h3>CakeDay</h3>
         <p class="note">Birthday reminders that stay on your device.</p>
+        <p class="note" id="ver"></p>
+        <button class="ghost" id="chk">Check for updates</button>
         <a class="credit" href="https://amirrahemi.com" target="_blank" rel="noopener"><svg class="i" data-i="heart"></svg>Made by Amir</a>
       </section>
     </div>
   </section>
 
-  <nav>
+  
+<nav>
     <button class="fab" id="add" aria-label="Add birthday"><svg class="i" data-i="plus"></svg><span class="lbl">Add birthday</span></button>
     <button class="tab" data-tab="home" aria-current="true"><svg class="i" data-i="home"></svg>Home</button>
     <button class="tab" data-tab="all"><svg class="i" data-i="db"></svg>All</button>
@@ -298,7 +342,7 @@ label,.lab{font-size:.8rem;font-weight:700;color:var(--mute);display:grid;gap:.3
 <dialog id="dlg">
   <form class="sheet" id="form" autocomplete="off">
     <header><h2 id="f-title">New birthday</h2><button type="button" class="ib" data-close aria-label="Close"><svg class="i" data-i="x"></svg></button></header>
-    <label>Name<input class="field" id="name" required maxlength="60" placeholder="Who’s the lucky one?"></label>
+    <label>Name<input class="field" id="name" dir="auto" required maxlength="60" placeholder="Who’s the lucky one?"></label>
     <label>Calendar<div id="s-cal"></div></label>
     <div class="grid3">
       <label>Month<div id="s-m"></div></label>
@@ -310,7 +354,7 @@ label,.lab{font-size:.8rem;font-weight:700;color:var(--mute);display:grid;gap:.3
       <div class="look"><span class="av" id="pv"></span><div class="cs" id="cs"></div><button type="button" class="ghost" id="pick"><svg class="i" data-i="img"></svg>Photo</button><button type="button" class="ghost" id="unpick" hidden>Remove</button></div>
       <input type="file" id="photo" accept="image/*" hidden>
       <div class="grid2"><label>Group<div id="s-tag"></div></label><label>Reminder<div id="s-rem"></div></label></div>
-      <label>Note<input class="field" id="note" maxlength="140" placeholder="Gift ideas, things to remember"></label>
+      <label>Note<input class="field" id="note" dir="auto" maxlength="140" placeholder="Gift ideas, things to remember"></label>
     </div>
     <div class="btns"><button type="button" class="ghost" id="share" hidden><svg class="i" data-i="share"></svg>Share card</button><button class="go">Save</button></div>
   </form>
@@ -322,6 +366,34 @@ label,.lab{font-size:.8rem;font-weight:700;color:var(--mute);display:grid;gap:.3
     <h2>Delete birthday?</h2>
     <p id="cfm-t"></p>
     <div class="btns"><button class="ghost" id="no">No</button><button class="go danger" id="yes">Yes, delete</button></div>
+  </div>
+</dialog>
+<dialog id="xs">
+  <div class="sheet">
+    <header><h2>Send to another device</h2><button type="button" class="ib" data-close aria-label="Close"><svg class="i" data-i="x"></svg></button></header>
+    <p class="note">On the new device open CakeDay, go to Settings, tap Receive and scan this code. Photos are not included.</p>
+    <div class="qr" id="qr"></div>
+    <p class="note" id="qr-note"></p>
+    <div class="btns"><button class="ghost" id="xs-copy">Copy code</button><button class="ghost" id="xs-share">Share code</button></div>
+  </div>
+</dialog>
+<dialog id="xr">
+  <div class="sheet">
+    <header><h2>Receive from another device</h2><button type="button" class="ib" data-close aria-label="Close"><svg class="i" data-i="x"></svg></button></header>
+    <div class="cam" id="cam" hidden><video id="vid" playsinline muted></video></div>
+    <button class="go" id="xr-scan">Scan QR code</button>
+    <label>Or paste the code<textarea class="field" id="xr-code" rows="3" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="CD1…"></textarea></label>
+    <button class="ghost" id="xr-go">Import code</button>
+  </div>
+</dialog>
+<dialog id="lock">
+  <div class="lockbox">
+    <svg class="i big" data-i="lock"></svg>
+    <h2 id="lock-t"></h2><p class="note" id="lock-s"></p>
+    <div class="pins" id="pins"><i></i><i></i><i></i><i></i></div>
+    <div class="pad" id="pad"></div>
+    <button class="linkb" id="lock-cancel" hidden>Cancel</button>
+    <button class="linkb" id="lock-forgot" hidden>Forgot PIN? Erase all data</button>
   </div>
 </dialog>
 <dialog id="wipe">
@@ -342,11 +414,62 @@ const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s)
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const pref = (k, d = null) => { try { return localStorage.getItem(k) || d; } catch { return d; } };
 const setPref = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch {} };
+const APP_VERSION = '1.3.0';
 const TAGS = ['Family', 'Friends', 'Work', 'Other'];
 const MILES = new Set([1, 16, 18, 21, 30, 40, 50, 60, 70, 80, 90, 100]);
 const FIELDS = ['id','name','cal','y','m','d','note','tag','color','photo','remind','wished'];
 const clean = r => Object.fromEntries(FIELDS.filter(k => r[k] !== undefined).map(k => [k, r[k]]));
 const iso = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+
+// ---------- Language (English / Persian) ----------
+const LANG = pref('lang', (navigator.language || '').toLowerCase().startsWith('fa') ? 'fa' : 'en'), FAON = LANG === 'fa';
+const FA = {
+  'Coming up':'در پیش رو','Name':'نام','Dates':'تاریخ‌ها','In':'مانده','Add another birthday':'افزودن تولد دیگر','Persian (Jalali)':'شمسی (جلالی)','Gregorian':'میلادی','Persian':'شمسی',
+  'Theme':'پوسته','Mode':'حالت','System':'سیستم','Light':'روشن','Dark':'تیره','Calendar':'تقویم','Default calendar':'تقویم پیش‌فرض','Language':'زبان','Language and calendar':'زبان و تقویم',
+  'Used for new birthdays and shown first in every date.':'برای تولدهای جدید استفاده می‌شود و در همهٔ تاریخ‌ها اول نمایش داده می‌شود.',
+  'Reminders':'یادآوری‌ها','Default reminder':'یادآوری پیش‌فرض','Off':'خاموش','Same day':'همان روز','1 day':'۱ روز','3 days':'۳ روز','1 week':'۱ هفته','Reminder time':'ساعت یادآوری',
+  'Enable notifications':'فعال‌سازی اعلان‌ها','Each birthday can override this in its edit form.':'هر تولد می‌تواند در فرم ویرایش، تنظیم خودش را داشته باشد.',
+  'Accessibility':'دسترسی‌پذیری','Text size':'اندازهٔ متن','Normal':'عادی','Large':'بزرگ','Extra large':'خیلی بزرگ','Motion':'حرکت','Follow system':'مطابق سیستم','Reduce':'کاهش','Contrast':'کنتراست','Standard':'استاندارد','High':'بالا','Scrollbars':'نوار پیمایش','Auto-hide':'پنهان‌شونده','Always show':'همیشه نمایان',
+  'App lock':'قفل برنامه','Protect CakeDay with a 4-digit PIN. This is a screen lock for casual privacy; your data is not encrypted.':'CakeDay را با رمز ۴ رقمی قفل کنید. این قفل فقط برای حریم خصوصی روزمره است و داده‌های شما رمزگذاری نمی‌شوند.',
+  'Set up app lock':'راه‌اندازی قفل برنامه','Change PIN':'تغییر رمز','Turn off':'خاموش کردن','Use Face ID or fingerprint':'استفاده از Face ID یا اثر انگشت','Turn off biometrics':'خاموش کردن بیومتریک',
+  'Transfer':'انتقال','Move your birthdays to another device. No server is involved.':'تولدهایتان را به دستگاه دیگر منتقل کنید. هیچ سروری در کار نیست.','Send':'ارسال','Receive':'دریافت',
+  'Backup':'پشتیبان‌گیری','Export':'خروجی','Import':'ورودی','Export to calendar (.ics)':'خروجی به تقویم (.ics)','Import from contacts (.vcf)':'ورود از مخاطبین (.vcf)','Delete all data':'حذف همهٔ داده‌ها',
+  'Install':'نصب','Install CakeDay':'نصب CakeDay','Birthday reminders that stay on your device.':'یادآور تولد که روی دستگاه شما می‌ماند.','Made by Amir':'ساخته‌شده توسط امیر','Version {v}':'نسخهٔ {v}','Check for updates':'بررسی به‌روزرسانی',
+  'Add birthday':'افزودن تولد','Home':'خانه','All':'همه','Settings':'تنظیمات','New birthday':'تولد جدید','Edit birthday':'ویرایش تولد','Month':'ماه','Day':'روز','Year':'سال','More options':'گزینه‌های بیشتر','Photo':'عکس','Remove':'حذف','Group':'گروه','Reminder':'یادآوری','Note':'یادداشت','Share card':'کارت تبریک','Save':'ذخیره',
+  'Delete birthday?':'این تولد حذف شود؟','No':'نه','Yes, delete':'بله، حذف شود','Delete all data?':'همهٔ داده‌ها حذف شوند؟','Export a backup first':'ابتدا پشتیبان بگیرید','Cancel':'انصراف','Delete all':'حذف همه','A new version is ready':'نسخهٔ جدید آماده است','Update':'به‌روزرسانی',
+  'Dark mode':'حالت تیره','Search name':'جستجوی نام','Search':'جستجو','Previous month':'ماه قبل','Next month':'ماه بعد','Close':'بستن','Who’s the lucky one?':'تولد چه کسی است؟','Gift ideas, things to remember':'ایدهٔ هدیه، نکات یادآوری','Type DELETE to confirm':'برای تأیید DELETE را تایپ کنید',
+  'Send to another device':'ارسال به دستگاه دیگر','Receive from another device':'دریافت از دستگاه دیگر','On the new device open CakeDay, go to Settings, tap Receive and scan this code. Photos are not included.':'در دستگاه جدید CakeDay را باز کنید، به تنظیمات بروید، دریافت را بزنید و این کد را اسکن کنید. عکس‌ها منتقل نمی‌شوند.',
+  'Copy code':'کپی کد','Share code':'اشتراک کد','Scan QR code':'اسکن کد QR','Or paste the code':'یا کد را اینجا بچسبانید','Import code':'ورود کد','Forgot PIN? Erase all data':'رمز را فراموش کرده‌اید؟ پاک کردن همهٔ داده‌ها',
+  'Today':'امروز','Tomorrow':'فردا','{n} days':'{n} روز','days':'روز','Next up':'بعدی','Born':'متولد','turns {n}':'{n} ساله می‌شود','Mark as wished':'تبریک گفتم','Wished':'تبریک گفته شد','Delete':'حذف',
+  'No birthdays yet.':'هنوز تولدی ثبت نشده.','Tap Add to create the first one.':'برای ساخت اولین مورد، افزودن را بزنید.','Total':'کل','Next 7 days':'۷ روز آینده','Next 30 days':'۳۰ روز آینده',
+  'It has been a while since your last backup.':'مدتی از آخرین پشتیبان‌گیری گذشته است.','Keep your birthdays safe with a backup.':'با پشتیبان‌گیری تولدهایتان را حفظ کنید.','Back up':'پشتیبان بگیر','Later':'بعداً',
+  'No birthdays on this day.':'در این روز تولدی نیست.','Tap a day':'یک روز را انتخاب کنید','Family':'خانواده','Friends':'دوستان','Work':'همکاران','Other':'سایر','Next':'بعدی','Month ':'ماه',
+  'No match.':'نتیجه‌ای نیست.','Your list is empty.':'فهرست شما خالی است.','No group':'بدون گروه','Use default':'پیش‌فرض','No reminder':'بدون یادآوری','On the day':'همان روز','1 day before':'۱ روز قبل','3 days before':'۳ روز قبل','1 week before':'۱ هفته قبل','No year':'بدون سال',
+  'Birthday added':'تولد اضافه شد','Changes saved':'تغییرات ذخیره شد','Could not read that image':'خواندن تصویر ممکن نشد','Deleted':'حذف شد','Undo':'بازگردانی','Marked as wished':'ثبت شد',
+  '“{name}” will be removed from your list.':'«{name}» از فهرست حذف می‌شود.','This permanently deletes all your birthdays ({n}) and reminder history from this device. It cannot be undone.':'همهٔ تولدهای شما ({n}) و سابقهٔ یادآوری‌ها برای همیشه از این دستگاه حذف می‌شود. این کار قابل بازگشت نیست.','All data deleted':'همهٔ داده‌ها حذف شد',
+  '{name}’s birthday is today':'امروز تولد {name} است','{name}’s birthday is tomorrow':'فردا تولد {name} است','{name}’s birthday is in {n} days':'{n} روز دیگر تولد {name} است','{name}’s birthday':'تولد {name}','Turns {n}.':'{n} ساله می‌شود.','Time to send your wishes.':'وقت تبریک گفتن است.',
+  'Notifications are not supported in this browser.':'این مرورگر از اعلان پشتیبانی نمی‌کند.','Notifications are blocked. Allow them in your browser settings.':'اعلان‌ها مسدود هستند. در تنظیمات مرورگر آن‌ها را مجاز کنید.','Allow notifications to get reminders. On iPhone, install the app first.':'برای دریافت یادآوری، اعلان‌ها را مجاز کنید. در آیفون ابتدا برنامه را نصب کنید.','Reminders are on. CakeDay checks whenever you open the app, and schedules alerts where your browser supports it.':'یادآوری‌ها روشن است. CakeDay هر بار که برنامه را باز می‌کنید بررسی می‌کند و در مرورگرهای پشتیبان، هشدار زمان‌بندی می‌کند.',
+  'CakeDay is installed on this device.':'CakeDay روی این دستگاه نصب است.','Install CakeDay to open it like a normal app, even without internet.':'CakeDay را نصب کنید تا مثل یک برنامهٔ معمولی، حتی بدون اینترنت باز شود.',
+  'Open this page in <b>Safari</b>.':'این صفحه را در <b>Safari</b> باز کنید.','Tap the Share button {i} in the bottom bar.':'دکمهٔ اشتراک {i} را در نوار پایین بزنید.','Scroll down and tap <b>Add to Home Screen</b>.':'پایین بروید و <b>Add to Home Screen</b> را بزنید.','Tap <b>Add</b>. CakeDay appears on your home screen.':'<b>Add</b> را بزنید. CakeDay در صفحهٔ اصلی ظاهر می‌شود.',
+  'Tap the three-dot menu in your browser.':'منوی سه‌نقطهٔ مرورگر را بزنید.','Tap <b>Install app</b> or <b>Add to Home screen</b>.':'<b>Install app</b> یا <b>Add to Home screen</b> را بزنید.','Confirm with <b>Install</b>.':'با <b>Install</b> تأیید کنید.','Look for the install icon in the address bar.':'نماد نصب را در نوار آدرس پیدا کنید.','Or open the browser menu and choose <b>Install CakeDay</b>.':'یا منوی مرورگر را باز کنید و <b>Install CakeDay</b> را بزنید.',
+  'Offline mode is not supported in this browser.':'حالت آفلاین در این مرورگر پشتیبانی نمی‌شود.','Offline mode is ready. Your birthdays are saved on this device.':'حالت آفلاین آماده است. تولدهای شما روی این دستگاه ذخیره شده‌اند.','Open the app once while online so it can prepare offline mode.':'یک بار برنامه را با اینترنت باز کنید تا حالت آفلاین آماده شود.',
+  'Last backup: {d}':'آخرین پشتیبان: {d}','No backup yet.':'هنوز پشتیبانی گرفته نشده.','Your data lives on this device and is protected from auto-cleanup.':'داده‌های شما روی این دستگاه است و از پاک‌سازی خودکار محافظت می‌شود.','Your data lives on this device. The browser may clear it if space runs low.':'داده‌های شما روی این دستگاه است. اگر فضا کم شود مرورگر ممکن است آن‌ها را پاک کند.',
+  'Exported {n}':'{n} مورد خروجی گرفته شد','Calendar file saved':'فایل تقویم ذخیره شد','Not a valid backup file':'فایل پشتیبان معتبر نیست','Card saved':'کارت ذخیره شد','Imported {n}':'{n} مورد وارد شد','Imported {n} · skipped {s} duplicates':'{n} مورد وارد شد · {s} تکراری رد شد','Nothing new to import':'مورد جدیدی برای ورود نیست',
+  'Happy birthday':'تولدت مبارک','years young':'سالگی','birthday':'تولد','Share card saved':'کارت ذخیره شد',
+  'Updates are not available here':'به‌روزرسانی اینجا در دسترس نیست','You have the latest version':'آخرین نسخه را دارید','Downloading the update…':'در حال دریافت به‌روزرسانی…','Could not check. Are you online?':'بررسی ممکن نشد. آیا آنلاین هستید؟',
+  'Enter PIN':'رمز را وارد کنید','Create a PIN':'یک رمز بسازید','Confirm PIN':'رمز را تکرار کنید','Enter current PIN':'رمز فعلی را وارد کنید','Wrong PIN':'رمز نادرست است','PINs did not match':'رمزها یکسان نبودند','Too many tries. Wait 30 seconds.':'تلاش‌های زیاد. ۳۰ ثانیه صبر کنید.','App lock is on':'قفل برنامه روشن شد','App lock is off':'قفل برنامه خاموش شد',
+  'Biometrics are not available on this device':'بیومتریک در این دستگاه در دسترس نیست','Biometric unlock is on':'بازکردن با بیومتریک روشن شد','Could not set up biometrics':'راه‌اندازی بیومتریک ممکن نشد','Biometric check failed':'تأیید بیومتریک ناموفق بود','Erase all birthdays and remove the lock?':'همهٔ تولدها پاک و قفل حذف شود؟',
+  'Nothing to send yet':'هنوز چیزی برای ارسال نیست','Scan with CakeDay on the new device: Settings, then Receive.':'در دستگاه جدید با CakeDay اسکن کنید: تنظیمات، سپس دریافت.','Too many birthdays for a QR code. Copy the code instead.':'تعداد تولدها برای کد QR زیاد است. به جای آن کد را کپی کنید.','Code copied':'کد کپی شد','Camera not available. Paste the code instead.':'دوربین در دسترس نیست. کد را بچسبانید.','That code is not valid':'این کد معتبر نیست','No birthdays found in that file':'در این فایل تولدی پیدا نشد','Imported from contacts: {n}':'{n} مورد از مخاطبین وارد شد'
+};
+const nd = v => FAON ? String(v).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]) : String(v);
+const tr = (k, v) => { let s = (FAON && FA[k]) || k; if (v) s = s.replace(/\{(\w+)\}/g, (_, n) => v[n] == null ? '' : typeof v[n] === 'number' ? nd(v[n]) : v[n]); return s; };
+document.documentElement.lang = LANG; document.documentElement.dir = FAON ? 'rtl' : 'ltr';
+if (FAON) {   // translate the static page once; changing language reloads the app
+  const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: n => /^(SCRIPT|STYLE)$/.test(n.parentNode.nodeName) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT }), ns = [];
+  while (w.nextNode()) ns.push(w.currentNode);
+  ns.forEach(n => { const k = n.nodeValue.trim(); if (FA[k]) n.nodeValue = n.nodeValue.replace(k, FA[k]); });
+  $$('[placeholder],[aria-label]').forEach(e => ['placeholder', 'aria-label'].forEach(a => { const v = e.getAttribute(a); if (v && FA[v]) e.setAttribute(a, FA[v]); }));
+}
 
 // ---------- Icons ----------
 const P = {
@@ -366,7 +489,11 @@ const P = {
   img:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>',
   share:'<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/>',
   bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/>',
-  ishare:'<path d="M12 3v12M8 7l4-4 4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>'
+  ishare:'<path d="M12 3v12M8 7l4-4 4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>',
+  lock:'<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+  scan:'<path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M9 10v1M15 10v1M12 14c.8.7 1.6 1 2.5 1"/>',
+  back:'<path d="M21 4H8l-7 8 7 8h13a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zM18 9l-6 6M12 9l6 6"/>',
+  users:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>'
 };
 const ic = n => `<svg class="i" viewBox="0 0 24 24">${P[n]}</svg>`;
 const paintIcons = () => $$('svg[data-i]').forEach(s => { s.setAttribute('viewBox', '0 0 24 24'); s.innerHTML = P[s.dataset.i]; s.removeAttribute('data-i'); });
@@ -375,28 +502,29 @@ const paintIcons = () => $$('svg[data-i]').forEach(s => { s.setAttribute('viewBo
 const K = ['bg', 'card', 'ink', 'mute', 'accent', 'line', 'on'];
 const BIG = ['1.6rem', '1.2rem', '.9rem'];
 const THEMES = [
+  { id:'mono', name:'Mono', hf:'Space Grotesk', r:['1rem','.8rem','.6rem'], l:['#f4f4f5','#ffffff','#18181b','#71717a','#18181b','#e4e4e7','#ffffff'], d:['#0a0a0b','#17171a','#fafafa','#a1a1aa','#f4f4f5','#2a2a2e','#0a0a0b'] },
   { id:'bubblegum', name:'Bubblegum', hf:'Fredoka', r:BIG, l:['#fff1ee','#ffffff','#3a2631','#8f747f','#ff6f91','#f6d9d4','#ffffff'], d:['#1e1626','#2b2036','#fdeff3','#b8a2c0','#ff8aa8','#3b2d48','#2a1220'] },
   { id:'mint', name:'Mint', hf:'Fredoka', r:BIG, l:['#eaf9f3','#ffffff','#17322a','#5f8a7c','#1fb58f','#cdeadf','#ffffff'], d:['#0e1f1a','#16302a','#e4faf1','#8db8a9','#3fd6ad','#24433a','#06241b'] },
   { id:'sunset', name:'Sunset', hf:'Fredoka', r:BIG, l:['#fff3e4','#ffffff','#3d2412','#9a7a58','#f26a1b','#f5dcc0','#ffffff'], d:['#1f140d','#2d1f15','#ffeedb','#c3a283','#ff9a4d','#42301f','#2e1606'] },
   { id:'lavender', name:'Lavender', hf:'Fredoka', r:BIG, l:['#f3efff','#ffffff','#2a2145','#85799f','#7c6cff','#dfd8fb','#ffffff'], d:['#16122a','#211b3c','#eeeaff','#a59cc9','#9a8dff','#332b57','#150f3a'] },
   { id:'berry', name:'Berry', hf:'Fredoka', r:BIG, l:['#fdeff3','#ffffff','#3b1224','#946078','#c2185b','#f5d3df','#ffffff'], d:['#1f0d16','#2d1421','#ffe9f1','#c49ab0','#ff5c93','#45202f','#2b0713'] },
   { id:'ocean', name:'Ocean', hf:'Space Grotesk', r:['1.3rem','1rem','.8rem'], l:['#eaf3ff','#ffffff','#12263f','#5f7ba0','#3b82f6','#d2e3fa','#ffffff'], d:['#0c1625','#14233a','#e6f0ff','#88a2c6','#5ea0ff','#213350','#06162e'] },
-  { id:'classic', name:'Classic', hf:'Playfair Display', r:['.8rem','.6rem','.45rem'], l:['#f7f0e4','#fffdf8','#2f2a24','#857866','#b4532a','#e6dac4','#ffffff'], d:['#1a1612','#251f19','#f3eadb','#b1a38a','#e8915f','#3a3126','#2a1306'] },
-  { id:'mono', name:'Mono', hf:'Space Grotesk', r:['1rem','.8rem','.6rem'], l:['#f4f4f5','#ffffff','#18181b','#71717a','#18181b','#e4e4e7','#ffffff'], d:['#0a0a0b','#17171a','#fafafa','#a1a1aa','#f4f4f5','#2a2a2e','#0a0a0b'] }
+  { id:'classic', name:'Classic', hf:'Playfair Display', r:['.8rem','.6rem','.45rem'], l:['#f7f0e4','#fffdf8','#2f2a24','#857866','#b4532a','#e6dac4','#ffffff'], d:['#1a1612','#251f19','#f3eadb','#b1a38a','#e8915f','#3a3126','#2a1306'] }
 ];
 const root = document.documentElement, sysDark = matchMedia('(prefers-color-scheme: dark)');
 const isDark = () => root.dataset.theme ? root.dataset.theme === 'dark' : sysDark.matches;
-const curTheme = () => THEMES.find(t => t.id === pref('style', 'bubblegum')) || THEMES[0];
+const curTheme = () => THEMES.find(t => t.id === pref('style', 'mono')) || THEMES[0];
 const hex2 = h => { h = h.replace('#', ''); if (h.length === 3) h = [...h].map(c => c + c).join(''); return [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16)); };
 const mixc = (a, b, pct) => { const x = hex2(a), y = hex2(b); return '#' + x.map((v, i) => Math.round(v * pct / 100 + y[i] * (100 - pct) / 100).toString(16).padStart(2, '0')).join(''); };
 const rgba = (h, a) => { const [r, g, b] = hex2(h); return `rgba(${r},${g},${b},${a})`; };
 function applyTheme() {
-  const t = curTheme(), dark = isDark(), p = dark ? t.d : t.l, s = root.style;
+  const t = curTheme(), dark = isDark(), p = [...(dark ? t.d : t.l)], s = root.style, hi = pref('contrast') === 'high';
+  if (hi) { p[3] = mixc(p[2], p[0], 85); p[5] = mixc(p[2], p[0], 40); }
   K.forEach((k, i) => s.setProperty('--' + k, p[i]));
   t.r.forEach((v, i) => s.setProperty('--r' + (i + 1), v));
-  s.setProperty('--hf', `"${t.hf}", Nunito, sans-serif`);
+  s.setProperty('--hf', `"${FAON ? 'Vazirmatn' : t.hf}", Nunito, sans-serif`);
   s.setProperty('--soft', mixc(p[4], p[1], 14));
-  s.setProperty('--shadow', dark ? '0 2px 10px rgba(0,0,0,.25)' : `0 2px 10px ${rgba(p[4], .10)}`);
+  s.setProperty('--shadow', hi ? 'none' : dark ? '0 2px 10px rgba(0,0,0,.25)' : `0 2px 10px ${rgba(p[4], .10)}`);
   s.setProperty('--fabsh', `0 4px 12px ${rgba(p[4], .35)}`);
   s.setProperty('--scrim', dark ? 'rgba(0,0,0,.6)' : rgba(p[2], .42));
   s.setProperty('--on16', rgba(p[6], .16)); s.setProperty('--redsoft', mixc('#e5484d', p[1], 15)); s.setProperty('--sb', rgba(p[4], .4));
@@ -409,6 +537,11 @@ function applyTheme() {
 }
 const setMode = v => { v === 'system' ? delete root.dataset.theme : root.dataset.theme = v; setPref('theme', v === 'system' ? null : v); applyTheme(); };
 if (pref('theme')) root.dataset.theme = pref('theme');
+function applyA11y() {
+  root.style.fontSize = (+pref('tsize', '1') * 100) + '%';
+  root.dataset.motion = pref('motion', 'system'); root.dataset.contrast = pref('contrast', 'standard'); root.dataset.sb = pref('sb', 'auto');
+  applyTheme();
+}
 $('#theme').onclick = () => { setMode(isDark() ? 'light' : 'dark'); seg.theme(); };
 $('#themes').onclick = e => { const b = e.target.closest('.tile'); if (b) { setPref('style', b.dataset.id); applyTheme(); } };
 sysDark.onchange = applyTheme;
@@ -417,11 +550,16 @@ const Seg = (el, get, set) => { const p = () => el.querySelectorAll('button').fo
 const seg = {
   cal: Seg($('#seg-cal'), () => pref('cal', 'persian'), v => { setPref('cal', v); render(); }),
   theme: Seg($('#seg-theme'), () => root.dataset.theme || 'system', setMode),
+  lang: Seg($('#seg-lang'), () => LANG, v => { setPref('lang', v); location.reload(); }),
   lead: Seg($('#seg-lead'), () => pref('lead', 'off'), async v => {
     setPref('lead', v);
     if (v !== 'off' && 'Notification' in window && Notification.permission === 'default') await Notification.requestPermission();
     paintNotif(); render();
   }),
+  size: Seg($('#seg-size'), () => pref('tsize', '1'), v => { setPref('tsize', v); applyA11y(); }),
+  motion: Seg($('#seg-motion'), () => pref('motion', 'system'), v => { setPref('motion', v); applyA11y(); }),
+  contrast: Seg($('#seg-contrast'), () => pref('contrast', 'standard'), v => { setPref('contrast', v); applyA11y(); }),
+  sb: Seg($('#seg-sb'), () => pref('sb', 'auto'), v => { setPref('sb', v); applyA11y(); }),
   mcal: Seg($('#seg-mcal'), () => cm.cal, v => { cm.cal = v; cm.start = null; cm.sel = null; renderCal(); })
 };
 
@@ -443,6 +581,7 @@ if (!pref('firstUse')) setPref('firstUse', String(Date.now()));
 
 // ---------- Calendars ----------
 const MG = Array.from({ length: 12 }, (_, i) => new Date(2001, i, 1).toLocaleString('en', { month: 'long' }));
+const MGF = Array.from({ length: 12 }, (_, i) => new Date(2001, i, 1).toLocaleString('fa-u-ca-gregory', { month: 'long' }));
 const MP = ['Farvardin','Ordibehesht','Khordad','Tir','Mordad','Shahrivar','Mehr','Aban','Azar','Dey','Bahman','Esfand'];
 const MPF = ['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
 const DAYS = { greg: [31,29,31,30,31,30,31,31,30,31,30,31], persian: [31,31,31,31,31,31,30,30,30,30,30,30] };
@@ -451,6 +590,7 @@ const persOf = d => Object.fromEntries(pFmt.formatToParts(d).map(p => [p.type, +
 const leap = y => (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
 const today = () => { const d = new Date(); return new Date(d.getFullYear(), d.getMonth(), d.getDate(), 12); };
 const addDays = (d, n) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n, 12);
+const mName = (c, m) => c === 'greg' ? (FAON ? MGF : MG)[m - 1] : (FAON ? MPF : MP)[m - 1];
 
 // Does this record fall on date dt? Feb 29 -> Feb 28 (Gregorian) and Esfand 30 -> Esfand 29 (Persian) in non-leap years.
 function occurs(r, dt, h) {
@@ -471,9 +611,9 @@ function nextDate(r) {
   }
   for (let i = 0; i < 1100; i++) { const dt = addDays(t, i); if (occurs(r, dt)) return dt; }
 }
-const born = r => `${r.d} ${r.cal === 'greg' ? MG[r.m - 1] : MP[r.m - 1]}${r.y ? ' ' + r.y : ''}`;
-const dateStr = d => d.toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
-const when = n => n === 0 ? 'Today' : n === 1 ? 'Tomorrow' : `${n} days`;
+const born = r => `${nd(r.d)} ${mName(r.cal, r.m)}${r.y ? ' ' + nd(r.y) : ''}`;
+const dateStr = d => d.toLocaleDateString(FAON ? 'fa-IR-u-ca-gregory' : undefined, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+const when = n => n === 0 ? tr('Today') : n === 1 ? tr('Tomorrow') : tr('{n} days', { n });
 
 // ---------- Custom select ----------
 function Select(el, { options = [], value = null, placeholder = 'Select', onChange = () => {} }) {
@@ -500,43 +640,43 @@ function Select(el, { options = [], value = null, placeholder = 'Select', onChan
 }
 document.addEventListener('pointerdown', e => $$('.sel.open').forEach(s => s.contains(e.target) || s.classList.remove('open')));
 
-const cal = Select($('#s-cal'), { value: 'persian', options: [{ v: 'persian', t: 'Persian (Jalali)' }, { v: 'greg', t: 'Gregorian' }], onChange: () => fill() });
-const sd = Select($('#s-d'), { placeholder: 'Day' });
-const sm = Select($('#s-m'), { placeholder: 'Month', onChange: () => fixDay() });
-const sy = Select($('#s-y'), { placeholder: 'Year' });
-const tagSel = Select($('#s-tag'), { options: [{ v: null, t: 'No group' }, ...TAGS.map(t => ({ v: t, t }))] });
-const remSel = Select($('#s-rem'), { options: [{ v: null, t: 'Use default' }, { v: 'off', t: 'No reminder' }, { v: '0', t: 'On the day' }, { v: '1', t: '1 day before' }, { v: '3', t: '3 days before' }, { v: '7', t: '1 week before' }] });
+const cal = Select($('#s-cal'), { value: 'persian', options: [{ v: 'persian', t: tr('Persian (Jalali)') }, { v: 'greg', t: tr('Gregorian') }], onChange: () => fill() });
+const sd = Select($('#s-d'), { placeholder: tr('Day') });
+const sm = Select($('#s-m'), { placeholder: tr('Month'), onChange: () => fixDay() });
+const sy = Select($('#s-y'), { placeholder: tr('Year') });
+const tagSel = Select($('#s-tag'), { options: [{ v: null, t: tr('No group') }, ...TAGS.map(t => ({ v: t, t: tr(t) }))] });
+const remSel = Select($('#s-rem'), { options: [{ v: null, t: tr('Use default') }, { v: 'off', t: tr('No reminder') }, { v: '0', t: tr('On the day') }, { v: '1', t: tr('1 day before') }, { v: '3', t: tr('3 days before') }, { v: '7', t: tr('1 week before') }] });
 
 function fixDay() {
   const max = DAYS[cal.get()][sm.get() - 1];
-  sd.setOptions(Array.from({ length: max }, (_, i) => ({ v: i + 1, t: String(i + 1) })));
+  sd.setOptions(Array.from({ length: max }, (_, i) => ({ v: i + 1, t: nd(i + 1) })));
   if (sd.get() > max) sd.set(max);
 }
 function fill(extraY) {
   const g = cal.get() === 'greg', t = today(), p = persOf(t);
-  sm.setOptions(MG.map((n, i) => ({ v: i + 1, t: g ? n : `${MP[i]} · ${MPF[i]}` })));
+  sm.setOptions(Array.from({ length: 12 }, (_, i) => ({ v: i + 1, t: g ? mName('greg', i + 1) : FAON ? MPF[i] : `${MP[i]} · ${MPF[i]}` })));
   sm.set(g ? t.getMonth() + 1 : p.month); sd.set(g ? t.getDate() : p.day); fixDay();
   const top = Math.max(g ? t.getFullYear() : p.year, extraY || 0), low = Math.min(g ? 1900 : 1280, extraY || 9999);
-  sy.setOptions([{ v: null, t: 'No year' }, ...Array.from({ length: top - low + 1 }, (_, i) => ({ v: top - i, t: String(top - i) }))]);
+  sy.setOptions([{ v: null, t: tr('No year') }, ...Array.from({ length: top - low + 1 }, (_, i) => ({ v: top - i, t: nd(top - i) }))]);
   sy.set(null);
 }
 
 // ---------- Rendering ----------
 let rows = [], tagF = null, booted = false;
 const av = r => r.photo ? `<span class="av"><img src="${esc(r.photo)}" alt=""></span>` : `<span class="av c${r.color ?? r.id % 5}">${esc(r.name.trim()[0].toUpperCase())}</span>`;
-const wishBtn = r => `<button class="wish ${r.wishedNow ? 'done' : ''}" data-wish="${r.id}">${r.wishedNow ? ic('check') + 'Wished' : 'Mark as wished'}</button>`;
-const shareBtn = r => `<button class="wish alt" data-share="${r.id}">${ic('share')}Share card</button>`;
-const ageTxt = r => r.age > 0 ? ` · turns ${r.age}${r.ms ? ` <span class="ms">${ic('star')}</span>` : ''}` : '';
+const wishBtn = r => `<button class="wish ${r.wishedNow ? 'done' : ''}" data-wish="${r.id}">${r.wishedNow ? ic('check') + tr('Wished') : tr('Mark as wished')}</button>`;
+const shareBtn = r => `<button class="wish alt" data-share="${r.id}">${ic('share')}${tr('Share card')}</button>`;
+const ageTxt = r => r.age > 0 ? ` · ${tr('turns {n}', { n: r.age })}${r.ms ? ` <span class="ms">${ic('star')}</span>` : ''}` : '';
 const row = (r, i) => `<li><div class="row" data-id="${r.id}" style="--i:${i}">${av(r)}
-  <div class="nm"><b>${esc(r.name)}</b><small>${r.cal === 'greg' ? 'Gregorian' : 'Persian'}${ageTxt(r)}${r.tag ? `<span class="tag">${r.tag}</span>` : ''}</small></div>
+  <div class="nm"><b dir="auto">${esc(r.name)}</b><small>${tr(r.cal === 'greg' ? 'Gregorian' : 'Persian')}${ageTxt(r)}${r.tag ? `<span class="tag">${tr(r.tag)}</span>` : ''}</small></div>
   <span class="chip ${r.n === 0 ? 'now' : ''}">${when(r.n)}</span>
-  <button class="del" data-id="${r.id}" aria-label="Delete ${esc(r.name)}">${ic('trash')}</button>
-  <div class="sub"><span class="bd">Born ${born(r)}</span><span>${r.a}</span><span>${r.b}</span>${r.note ? `<span class="nt">${esc(r.note)}</span>` : ''}</div>${r.n === 0 ? `<div class="racts">${wishBtn(r)}${shareBtn(r)}</div>` : ''}</div></li>`;
+  <button class="del" data-id="${r.id}" aria-label="${tr('Delete')} ${esc(r.name)}">${ic('trash')}</button>
+  <div class="sub"><span class="bd">${tr('Born')} ${born(r)}</span><span>${r.a}</span><span>${r.b}</span>${r.note ? `<span class="nt" dir="auto">${esc(r.note)}</span>` : ''}</div>${r.n === 0 ? `<div class="racts">${wishBtn(r)}${shareBtn(r)}</div>` : ''}</div></li>`;
 
 async function render() {
   const first = pref('cal', 'persian');
   rows = (await run('readonly', s => s.getAll())).filter(r => r.cal === 'greg' || r.cal === 'persian').map(r => {
-    const next = nextDate(r), p = persOf(next), g = dateStr(next), j = `${p.day} ${MP[p.month - 1]} ${p.year}`, n = Math.round((next - today()) / 864e5);
+    const next = nextDate(r), p = persOf(next), g = dateStr(next), j = `${nd(p.day)} ${mName('persian', p.month)} ${nd(p.year)}`, n = Math.round((next - today()) / 864e5);
     const age = r.y ? (r.cal === 'greg' ? next.getFullYear() : p.year) - r.y : 0;
     return { ...r, next, n, age, ms: MILES.has(age), wishedNow: n === 0 && r.wished === iso(next),
       mk: first === 'persian' ? p.month * 100 + p.day : (next.getMonth() + 1) * 100 + next.getDate(),
@@ -544,21 +684,21 @@ async function render() {
   }).sort((a, b) => a.n - b.n);
 
   const f = rows[0];
-  $('#hero').innerHTML = f ? `<div class="hero" data-id="${f.id}"><div class="t"><small>${f.n === 0 ? 'Today' : 'Next up'}</small><b class="f">${esc(f.name)}</b><p>${f.a} · ${f.b}${ageTxt(f)}</p>
+  $('#hero').innerHTML = f ? `<div class="hero" data-id="${f.id}"><div class="t"><small>${f.n === 0 ? tr('Today') : tr('Next up')}</small><b class="f" dir="auto">${esc(f.name)}</b><p>${f.a} · ${f.b}${ageTxt(f)}</p>
     ${f.n === 0 ? `<div class="hacts">${wishBtn(f)}${shareBtn(f)}</div>` : ''}</div>
-    <div class="badge">${f.n === 0 ? ic('cake') + '<span>Today</span>' : f.n === 1 ? '<span>Tomorrow</span>' : `<b>${f.n}</b><span>days</span>`}</div></div>`
-    : `<div class="empty">${ic('cake')}<p>No birthdays yet.<br>Tap Add to create the first one.</p></div>`;
+    <div class="badge">${f.n === 0 ? ic('cake') + `<span>${tr('Today')}</span>` : f.n === 1 ? `<span>${tr('Tomorrow')}</span>` : `<b>${nd(f.n)}</b><span>${tr('days')}</span>`}</div></div>`
+    : `<div class="empty">${ic('cake')}<p>${tr('No birthdays yet.')}<br>${tr('Tap Add to create the first one.')}</p></div>`;
   $('#up-h').hidden = rows.length < 2;
   $('#upcoming').innerHTML = rows.slice(1).map((r, i) => row(r, i + 1)).join('');
   $('#stats').innerHTML = [[rows.length, 'Total'], [rows.filter(r => r.n <= 7).length, 'Next 7 days'], [rows.filter(r => r.n <= 30).length, 'Next 30 days']]
-    .map(([n, l], i) => `<div class="stat" style="--i:${i}"><b>${n}</b><span>${l}</span></div>`).join('');
+    .map(([n, l], i) => `<div class="stat" style="--i:${i}"><b>${nd(n)}</b><span>${tr(l)}</span></div>`).join('');
 
   const last = +pref('lastBackup', 0), idle = Date.now() - (last || +pref('firstUse', Date.now()));
   $('#nudge').innerHTML = rows.length && idle > (last ? 90 : 14) * 864e5 && Date.now() > +pref('snooze', 0)
-    ? `<div class="nudge">${ic('download')}<p>${last ? 'It has been a while since your last backup.' : 'Keep your birthdays safe with a backup.'}</p><button id="n-ex">Back up</button><button id="n-later">Later</button></div>` : '';
+    ? `<div class="nudge">${ic('download')}<p>${tr(last ? 'It has been a while since your last backup.' : 'Keep your birthdays safe with a backup.')}</p><button id="n-ex">${tr('Back up')}</button><button id="n-later">${tr('Later')}</button></div>` : '';
 
   try {  // title + app icon badge (days until the next birthday, or how many are today)
-    if (f) { document.title = `CakeDay · ${f.name} ${f.n === 0 ? 'today' : f.n === 1 ? 'tomorrow' : `in ${f.n} days`}`; Promise.resolve(navigator.setAppBadge?.(rows.filter(r => r.n === 0).length || f.n)).catch(() => {}); }
+    if (f) { document.title = `CakeDay · ${f.name} · ${when(f.n)}`; Promise.resolve(navigator.setAppBadge?.(rows.filter(r => r.n === 0).length || f.n)).catch(() => {}); }
     else { document.title = 'CakeDay'; Promise.resolve(navigator.clearAppBadge?.()).catch(() => {}); }
   } catch {}
   renderAll(); renderCal(); checkReminders();
@@ -569,9 +709,9 @@ function renderAll() {
   let list = rows.filter(r => r.name.toLowerCase().includes(q) && (!tagF || r.tag === tagF));
   if (sort === 'name') list = [...list].sort((a, b) => a.name.localeCompare(b.name));
   if (sort === 'month') list = [...list].sort((a, b) => a.mk - b.mk);
-  $('#chips').innerHTML = [null, ...TAGS].map(t => `<button data-t="${t || ''}" aria-pressed="${t === tagF}">${t || 'All'}</button>`).join('');
-  $('#sort').innerHTML = `${ic('sort')}${{ next: 'Next', name: 'Name', month: 'Month' }[sort]}`;
-  $('#full').innerHTML = list.length ? list.map(row).join('') : `<li class="empty">${ic(rows.length ? 'search' : 'cake')}<p>${rows.length ? 'No match.' : 'Your list is empty.'}</p></li>`;
+  $('#chips').innerHTML = [null, ...TAGS].map(t => `<button data-t="${t || ''}" aria-pressed="${t === tagF}">${tr(t || 'All')}</button>`).join('');
+  $('#sort').innerHTML = `${ic('sort')}${tr({ next: 'Next', name: 'Name', month: 'Month' }[sort])}`;
+  $('#full').innerHTML = list.length ? list.map(row).join('') : `<li class="empty">${ic(rows.length ? 'search' : 'cake')}<p>${tr(rows.length ? 'No match.' : 'Your list is empty.')}</p></li>`;
 }
 $('#q').oninput = renderAll;
 $('#chips').onclick = e => { const b = e.target.closest('button'); if (b) { tagF = b.dataset.t || null; renderAll(); } };
@@ -588,20 +728,20 @@ const mShift = (s, c, k) => {
 function renderCal() {
   if (!cm.start) cm.start = mStart(today(), cm.cal);
   const c = cm.cal, s = cm.start, len = Math.round((mShift(s, c, 1) - s) / 864e5), off = c === 'greg' ? s.getDay() : (s.getDay() + 1) % 7, t = iso(today());
-  const wd = c === 'greg' ? ['Su','Mo','Tu','We','Th','Fr','Sa'] : ['Sa','Su','Mo','Tu','We','Th','Fr'], p = persOf(s);
-  $('#c-title').textContent = c === 'greg' ? s.toLocaleDateString(undefined, { month: 'long', year: 'numeric' }) : `${MP[p.month - 1]} ${MPF[p.month - 1]} ${p.year}`;
+  const wd = FAON ? (c === 'greg' ? ['ی','د','س','چ','پ','ج','ش'] : ['ش','ی','د','س','چ','پ','ج']) : (c === 'greg' ? ['Su','Mo','Tu','We','Th','Fr','Sa'] : ['Sa','Su','Mo','Tu','We','Th','Fr']), p = persOf(s);
+  $('#c-title').textContent = c === 'greg' ? s.toLocaleDateString(FAON ? 'fa-IR-u-ca-gregory' : undefined, { month: 'long', year: 'numeric' }) : FAON ? `${MPF[p.month - 1]} ${nd(p.year)}` : `${MP[p.month - 1]} ${MPF[p.month - 1]} ${p.year}`;
   let h = wd.map(x => `<div class="wd">${x}</div>`).join('') + '<span></span>'.repeat(off);
   for (let i = 0; i < len; i++) {
     const dt = addDays(s, i), ph = c === 'persian' ? persOf(dt) : null, k = iso(dt);
     const n = rows.filter(r => occurs(r, dt, r.cal === 'persian' ? (ph || persOf(dt)) : null)).length;
-    h += `<button class="cell ${n ? 'has' : ''} ${k === t ? 'today' : ''} ${k === cm.sel ? 'sel' : ''}" data-d="${k}">${c === 'greg' ? dt.getDate() : ph.day}<span class="dots">${'<i></i>'.repeat(Math.min(3, n))}</span></button>`;
+    h += `<button class="cell ${n ? 'has' : ''} ${k === t ? 'today' : ''} ${k === cm.sel ? 'sel' : ''}" data-d="${k}">${nd(c === 'greg' ? dt.getDate() : ph.day)}<span class="dots">${'<i></i>'.repeat(Math.min(3, n))}</span></button>`;
   }
   $('#mgrid').innerHTML = h;
   if (cm.sel) {
     const [y, m, d] = cm.sel.split('-').map(Number), dt = new Date(y, m - 1, d, 12), list = rows.filter(r => occurs(r, dt));
     $('#day-h').textContent = dateStr(dt);
-    $('#day-list').innerHTML = list.length ? list.map(row).join('') : '<li class="empty">No birthdays on this day.</li>';
-  } else { $('#day-h').textContent = 'Tap a day'; $('#day-list').innerHTML = ''; }
+    $('#day-list').innerHTML = list.length ? list.map(row).join('') : `<li class="empty">${tr('No birthdays on this day.')}</li>`;
+  } else { $('#day-h').textContent = tr('Tap a day'); $('#day-list').innerHTML = ''; }
 }
 $('#mgrid').onclick = e => { const b = e.target.closest('.cell'); if (b) { cm.sel = b.dataset.d; renderCal(); } };
 $('#c-prev').onclick = () => { cm.start = mShift(cm.start, cm.cal, -1); cm.sel = null; renderCal(); };
@@ -609,7 +749,7 @@ $('#c-next').onclick = () => { cm.start = mShift(cm.start, cm.cal, 1); cm.sel = 
 
 // ---------- Dialogs ----------
 const closeAnim = d => { if (!d.open || d.classList.contains('closing')) return; d.classList.add('closing'); setTimeout(() => { d.close(); d.classList.remove('closing'); }, 220); };
-$$('dialog').forEach(d => {
+$$('dialog:not(#lock)').forEach(d => {
   d.addEventListener('cancel', e => { e.preventDefault(); closeAnim(d); });
   d.addEventListener('click', e => { if (e.target === d) closeAnim(d); });
   d.querySelectorAll('[data-close]').forEach(b => b.onclick = () => closeAnim(d));
@@ -637,11 +777,11 @@ $('#photo').onchange = async e => {
     const bm = await createImageBitmap(f), s = Math.min(bm.width, bm.height), c = document.createElement('canvas');
     c.width = c.height = 160; c.getContext('2d').drawImage(bm, (bm.width - s) / 2, (bm.height - s) / 2, s, s, 0, 0, 160, 160);
     look.photo = c.toDataURL('image/jpeg', .8); paintLook();
-  } catch { toast('Could not read that image'); }
+  } catch { toast(tr('Could not read that image')); }
 };
 function openForm(r) {
   editId = r ? r.id : null; $('#form').reset();
-  $('#f-title').textContent = r ? 'Edit birthday' : 'New birthday';
+  $('#f-title').textContent = tr(r ? 'Edit birthday' : 'New birthday');
   cal.set(r ? r.cal : pref('cal', 'persian')); fill(r && r.y);
   if (r) { $('#name').value = r.name; sm.set(r.m); fixDay(); sd.set(r.d); sy.set(r.y ?? null); }
   tagSel.set(r?.tag ?? null); remSel.set(r?.remind ?? null); $('#note').value = r?.note || '';
@@ -658,13 +798,13 @@ $('#form').onsubmit = async e => {
   const rec = { ...old, name, cal: cal.get(), y: sy.get(), m: sm.get(), d: sd.get(), note: $('#note').value.trim() || null, tag: tagSel.get(), remind: remSel.get(), color: look.color, photo: look.photo };
   if (wasEdit && (old.m !== rec.m || old.d !== rec.d || old.cal !== rec.cal)) rec.wished = null;
   await run('readwrite', s => wasEdit ? s.put(rec) : s.add(rec));
-  closeAnim(dlg); await render(); toast(wasEdit ? 'Changes saved' : 'Birthday added');
+  closeAnim(dlg); await render(); toast(tr(wasEdit ? 'Changes saved' : 'Birthday added'));
 };
 
-// Delete confirmation
+// Delete confirmation (+ undo)
 const cfm = $('#cfm');
 const ask = name => new Promise(res => {
-  $('#cfm-t').textContent = `“${name}” will be removed from your list.`;
+  $('#cfm-t').textContent = tr('“{name}” will be removed from your list.', { name });
   cfm.returnValue = 'no'; cfm.onclose = () => res(cfm.returnValue === 'yes'); cfm.showModal();
 });
 $('#yes').onclick = () => { cfm.returnValue = 'yes'; closeAnim(cfm); };
@@ -674,17 +814,19 @@ document.addEventListener('click', async e => {
   const t = e.target;
   const del = t.closest('.del');
   if (del) {
-    const id = +del.dataset.id, r = rows.find(r => r.id === id);
-    if (!await ask(r ? r.name : 'This birthday')) return;
+    const id = +del.dataset.id, r = rows.find(r => r.id === id); if (!r) return;
+    if (!await ask(r.name)) return;
+    const rec = clean(r);
     $$(`.del[data-id="${id}"]`).forEach(x => x.closest('.row').classList.add('out'));
     await new Promise(r => setTimeout(r, 220));
-    await run('readwrite', s => s.delete(id)); render(); toast('Deleted'); return;
+    await run('readwrite', s => s.delete(id)); render();
+    toast(tr('Deleted'), { label: tr('Undo'), fn: async () => { await run('readwrite', s => s.put(rec)); render(); } }); return;
   }
   const w = t.closest('[data-wish]');
   if (w) {
     const r = rows.find(r => r.id === +w.dataset.wish); if (!r) return;
     await run('readwrite', s => s.put({ ...clean(r), wished: r.wishedNow ? null : iso(r.next) }));
-    if (!r.wishedNow) { confetti(); toast('Marked as wished'); }
+    if (!r.wishedNow) { confetti(); toast(tr('Marked as wished')); }
     render(); return;
   }
   const sh = t.closest('[data-share]');
@@ -697,7 +839,7 @@ document.addEventListener('click', async e => {
 
 // ---------- Confetti + share card ----------
 function confetti() {
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || root.dataset.motion === 'reduce') return;
   const c = document.createElement('canvas'); c.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:200';
   document.body.append(c);
   const x = c.getContext('2d'), w = c.width = innerWidth, h = c.height = innerHeight;
@@ -713,12 +855,12 @@ function confetti() {
 const rr = (x, a, b, w, h, r) => { x.moveTo(a + r, b); x.arcTo(a + w, b, a + w, b + h, r); x.arcTo(a + w, b + h, a, b + h, r); x.arcTo(a, b + h, a, b, r); x.arcTo(a, b, a + w, b, r); x.closePath(); };
 async function shareCard(r) {
   if (!r) return;
-  try { await document.fonts.load('600 80px "Fredoka"'); } catch {}
+  try { await document.fonts.load(`600 80px "${FAON ? 'Vazirmatn' : 'Fredoka'}"`); } catch {}
   const cs = getComputedStyle(root), v = k => cs.getPropertyValue(k).trim(), hf = v('--hf');
   const W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d');
   x.fillStyle = v('--accent'); x.fillRect(0, 0, W, H);
   x.fillStyle = v('--on'); x.globalAlpha = .14; [[W, 0, 420], [0, H, 520], [140, 330, 120]].forEach(([a, b, q]) => { x.beginPath(); x.arc(a, b, q, 0, 7); x.fill(); }); x.globalAlpha = 1;
-  x.textAlign = 'center'; x.font = `600 64px ${hf}`; x.fillText('Happy birthday', W / 2, 170);
+  x.textAlign = 'center'; x.font = `600 64px ${hf}`; x.fillText(tr('Happy birthday'), W / 2, 170);
   x.fillStyle = v('--card'); x.beginPath(); rr(x, 90, 300, 900, 760, 70); x.fill();
   x.fillStyle = v('--card'); x.beginPath(); x.arc(W / 2, 300, 150, 0, 7); x.fill();
   x.save(); x.beginPath(); x.arc(W / 2, 300, 128, 0, 7); x.clip();
@@ -727,19 +869,22 @@ async function shareCard(r) {
   x.restore();
   let size = 120; x.font = `600 ${size}px ${hf}`; while (x.measureText(r.name).width > 780 && size > 40) { size -= 4; x.font = `600 ${size}px ${hf}`; }
   x.fillStyle = v('--ink'); x.fillText(r.name, W / 2, 600);
-  x.fillStyle = v('--accent'); x.font = `600 ${r.age > 0 ? 200 : 120}px ${hf}`; x.fillText(r.age > 0 ? String(r.age) : r.n === 0 ? 'Today!' : when(r.n), W / 2, 820);
-  x.fillStyle = v('--mute'); x.font = `500 48px ${hf}`; x.fillText(r.age > 0 ? 'years young' : 'birthday', W / 2, 890);
+  x.fillStyle = v('--accent'); x.font = `600 ${r.age > 0 ? 200 : 120}px ${hf}`; x.fillText(r.age > 0 ? nd(r.age) : r.n === 0 ? tr('Today') : when(r.n), W / 2, 820);
+  x.fillStyle = v('--mute'); x.font = `500 48px ${hf}`; x.fillText(tr(r.age > 0 ? 'years young' : 'birthday'), W / 2, 890);
   x.font = `500 44px ${hf}`; x.fillText(r.a, W / 2, 990);
   x.fillStyle = v('--on'); x.font = `600 48px ${hf}`; x.fillText('CakeDay', W / 2, 1230);
   c.toBlob(async b => {
     const f = new File([b], `birthday-${r.name.replace(/\W+/g, '-').toLowerCase() || 'card'}.png`, { type: 'image/png' });
-    if (navigator.canShare?.({ files: [f] })) { try { await navigator.share({ files: [f], title: `Happy birthday ${r.name}` }); return; } catch (e) { if (e.name === 'AbortError') return; } }
-    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(f), download: f.name }); a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); toast('Card saved');
+    if (navigator.canShare?.({ files: [f] })) { try { await navigator.share({ files: [f], title: r.name }); return; } catch (e) { if (e.name === 'AbortError') return; } }
+    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(f), download: f.name }); a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); toast(tr('Card saved'));
   }, 'image/png');
 }
 
 // ---------- Reminders ----------
 const leadOf = r => { const v = r.remind ?? pref('lead', 'off'); return v === 'off' ? null : +v; };
+const rtime = () => pref('rtime', '09:00').split(':').map(Number);
+const atOf = (r, L) => { const at = addDays(r.next, -L), [h, m] = rtime(); at.setHours(h, m || 0, 0, 0); return at; };
+const bdayMsg = (name, n) => n === 0 ? tr('{name}’s birthday is today', { name }) : n === 1 ? tr('{name}’s birthday is tomorrow', { name }) : tr('{name}’s birthday is in {n} days', { name, n });
 async function notify(title, body, tag) {
   try { const reg = await navigator.serviceWorker?.ready; if (reg) return await reg.showNotification(title, { body, tag, icon: 'icon-192.png', badge: 'icon-192.png' }); } catch {}
   try { new Notification(title, { body, tag, icon: 'icon-192.png' }); } catch {}
@@ -750,9 +895,9 @@ function checkReminders() {
   let changed = false;
   for (const r of rows) {
     const L = leadOf(r), k = r.id + '|' + iso(r.next);
-    if (L == null || r.n > L || done[k]) continue;
+    if (L == null || done[k] || new Date() < atOf(r, L)) continue;
     done[k] = 1; changed = true;
-    notify(`${r.name}’s birthday ${r.n === 0 ? 'is today' : r.n === 1 ? 'is tomorrow' : `is in ${r.n} days`}`, r.age > 0 ? `Turns ${r.age}.` : 'Time to send your wishes.', 'cd-' + k);
+    notify(bdayMsg(r.name, r.n), r.age > 0 ? tr('Turns {n}.', { n: r.age }) : tr('Time to send your wishes.'), 'cd-' + k);
   }
   if (changed) setPref('notified', JSON.stringify(Object.fromEntries(Object.entries(done).slice(-200))));
   scheduleTriggers();
@@ -763,63 +908,110 @@ async function scheduleTriggers() {   // only where the browser supports schedul
     const reg = await navigator.serviceWorker.ready;
     for (const r of rows) {
       const L = leadOf(r); if (L == null) continue;
-      const at = addDays(r.next, -L); at.setHours(9, 0, 0, 0); if (at <= new Date()) continue;
-      reg.showNotification(`${r.name}’s birthday ${L === 0 ? 'is today' : `is in ${L} day${L > 1 ? 's' : ''}`}`, { tag: 'cdt-' + r.id + '|' + iso(r.next), icon: 'icon-192.png', showTrigger: new TimestampTrigger(+at) });
+      const at = atOf(r, L); if (at <= new Date()) continue;
+      reg.showNotification(bdayMsg(r.name, L), { tag: 'cdt-' + r.id + '|' + iso(r.next), icon: 'icon-192.png', showTrigger: new TimestampTrigger(+at) });
     }
   } catch {}
 }
 function paintNotif() {
   const perm = 'Notification' in window ? Notification.permission : 'unsupported';
   $('#notif').hidden = perm !== 'default';
-  $('#notif-t').textContent = { unsupported: 'Notifications are not supported in this browser.', denied: 'Notifications are blocked. Allow them in your browser settings.',
-    default: 'Allow notifications to get reminders. On iPhone, install the app first.', granted: 'Reminders are on. CakeDay checks whenever you open the app, and schedules alerts where your browser supports it.' }[perm];
+  $('#notif-t').textContent = tr({ unsupported: 'Notifications are not supported in this browser.', denied: 'Notifications are blocked. Allow them in your browser settings.',
+    default: 'Allow notifications to get reminders. On iPhone, install the app first.', granted: 'Reminders are on. CakeDay checks whenever you open the app, and schedules alerts where your browser supports it.' }[perm]);
 }
 $('#notif').onclick = async () => {
   const p = await Notification.requestPermission();
   if (p === 'granted' && pref('lead', 'off') === 'off') { setPref('lead', '0'); seg.lead(); }
   paintNotif(); render();
 };
+$('#rtime').onchange = e => { setPref('rtime', e.target.value || '09:00'); render(); };
 
-// ---------- Settings tab ----------
-let deferred;
+// ---------- Install, updates, offline ----------
+let deferred, swReg, updating = false;
 const standalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone;
 const UA = navigator.userAgent, isIOS = /iphone|ipad|ipod/i.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1), isAnd = /android/i.test(UA);
 function paintInstall() {
   const inst = standalone();
   $('#install').hidden = !deferred;
-  $('#inst-t').textContent = inst ? 'CakeDay is installed on this device.' : 'Install CakeDay to open it like a normal app, even without internet.';
-  const steps = isIOS ? ['Open this page in <b>Safari</b>.', `Tap the Share button ${ic('ishare')} in the bottom bar.`, 'Scroll down and tap <b>Add to Home Screen</b>.', 'Tap <b>Add</b>. CakeDay appears on your home screen.']
+  $('#inst-t').textContent = tr(inst ? 'CakeDay is installed on this device.' : 'Install CakeDay to open it like a normal app, even without internet.');
+  const steps = isIOS ? ['Open this page in <b>Safari</b>.', 'Tap the Share button {i} in the bottom bar.', 'Scroll down and tap <b>Add to Home Screen</b>.', 'Tap <b>Add</b>. CakeDay appears on your home screen.']
     : isAnd ? ['Tap the three-dot menu in your browser.', 'Tap <b>Install app</b> or <b>Add to Home screen</b>.', 'Confirm with <b>Install</b>.']
     : ['Look for the install icon in the address bar.', 'Or open the browser menu and choose <b>Install CakeDay</b>.'];
-  $('#inst-steps').innerHTML = inst ? '' : steps.map(x => `<li><span>${x}</span></li>`).join('');
-  $('#off-t').textContent = !('serviceWorker' in navigator) ? 'Offline mode is not supported in this browser.' : navigator.serviceWorker.controller ? 'Offline mode is ready. Your birthdays are saved on this device.' : 'Open the app once while online so it can prepare offline mode.';
+  $('#inst-steps').innerHTML = inst ? '' : steps.map(x => `<li><span>${tr(x).replace('{i}', ic('ishare'))}</span></li>`).join('');
+  $('#off-t').textContent = tr(!('serviceWorker' in navigator) ? 'Offline mode is not supported in this browser.' : navigator.serviceWorker.controller ? 'Offline mode is ready. Your birthdays are saved on this device.' : 'Open the app once while online so it can prepare offline mode.');
 }
 addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferred = e; paintInstall(); });
 addEventListener('appinstalled', () => { deferred = null; paintInstall(); });
 $('#install').onclick = async () => { if (deferred) { deferred.prompt(); await deferred.userChoice; deferred = null; paintInstall(); } };
-function refreshSettings() {
-  seg.cal(); seg.theme(); seg.lead(); paintInstall(); paintNotif();
-  const lb = +pref('lastBackup', 0); $('#last-b').textContent = lb ? `Last backup: ${new Date(lb).toLocaleDateString()}` : 'No backup yet.';
-  navigator.storage?.persisted?.().then(p => $('#store').textContent = p ? 'Your data lives on this device and is protected from auto-cleanup.' : 'Your data lives on this device. The browser may clear it if space runs low.');
+function offerUpdate(w) { if (!navigator.serviceWorker.controller) return; $('#upd').hidden = false; $('#upd-b').onclick = () => { updating = true; w.postMessage('SKIP_WAITING'); }; }
+async function checkUpdate() {
+  if (!swReg) return toast(tr('Updates are not available here'));
+  const b = $('#chk'); b.disabled = true;
+  try {
+    await swReg.update(); await new Promise(r => setTimeout(r, 1500));
+    if (swReg.waiting) offerUpdate(swReg.waiting); else if (swReg.installing) toast(tr('Downloading the update…')); else toast(tr('You have the latest version'));
+  } catch { toast(tr('Could not check. Are you online?')); }
+  b.disabled = false;
+}
+$('#chk').onclick = checkUpdate;
+if ('serviceWorker' in navigator) {   // a new version waits until you tap Update, so nothing is lost mid-edit
+  navigator.serviceWorker.addEventListener('controllerchange', () => { paintInstall(); if (updating) location.reload(); });
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    swReg = reg;
+    if (reg.waiting) offerUpdate(reg.waiting);
+    reg.addEventListener('updatefound', () => { const w = reg.installing; w && w.addEventListener('statechange', () => { if (w.state === 'installed') offerUpdate(w); }); });
+    const check = () => reg.update().catch(() => {});
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) check(); }); setInterval(check, 36e5); check();
+  }).catch(() => {});
 }
 
+// ---------- Settings tab ----------
+function refreshSettings() {
+  ['cal', 'theme', 'lang', 'lead', 'size', 'motion', 'contrast', 'sb'].forEach(k => seg[k]());
+  paintInstall(); paintNotif(); paintLockUI();
+  $('#rtime').value = pref('rtime', '09:00'); $('#ver').textContent = tr('Version {v}', { v: APP_VERSION });
+  const lb = +pref('lastBackup', 0); $('#last-b').textContent = lb ? tr('Last backup: {d}', { d: new Date(lb).toLocaleDateString(FAON ? 'fa-IR-u-ca-gregory' : undefined) }) : tr('No backup yet.');
+  navigator.storage?.persisted?.().then(p => $('#store').textContent = tr(p ? 'Your data lives on this device and is protected from auto-cleanup.' : 'Your data lives on this device. The browser may clear it if space runs low.'));
+}
+
+// ---------- Import / export ----------
+const sane = x => x && typeof x.name === 'string' && x.name.trim() && DAYS[x.cal] && Number.isInteger(x.m) && x.m >= 1 && x.m <= 12 && Number.isInteger(x.d) && x.d >= 1 && x.d <= DAYS[x.cal][x.m - 1];
+const norm = x => ({ name: x.name.trim().slice(0, 60), cal: x.cal, y: Number.isInteger(x.y) ? x.y : null, m: x.m, d: x.d,
+  note: typeof x.note === 'string' && x.note.trim() ? x.note.trim().slice(0, 140) : null, tag: TAGS.includes(x.tag) ? x.tag : null,
+  color: Number.isInteger(x.color) && x.color >= 0 && x.color < 5 ? x.color : null, remind: ['off', '0', '1', '3', '7'].includes(x.remind) ? x.remind : null,
+  photo: typeof x.photo === 'string' && x.photo.startsWith('data:image/') && x.photo.length < 80000 ? x.photo : null, wished: null });
+const dupKey = x => [x.name.toLowerCase(), x.cal, x.m, x.d, x.y || ''].join('|');
+async function importItems(items, okKey = 'Imported {n}') {   // shared by backup files, transfer codes and contacts; skips duplicates
+  const valid = items.filter(sane).map(norm), seen = new Set(rows.map(dupKey));
+  const list = valid.filter(x => { const k = dupKey(x); if (seen.has(k)) return false; seen.add(k); return true; }), skipped = valid.length - list.length;
+  if (list.length) await run('readwrite', s => { list.forEach(i => s.add(i)); });
+  await render();
+  toast(list.length ? (skipped ? tr('Imported {n} · skipped {s} duplicates', { n: list.length, s: skipped }) : tr(okKey, { n: list.length })) : tr('Nothing new to import'));
+  return list.length;
+}
 function exportJSON() {
   const items = rows.map(r => { const { id, wished, ...o } = clean(r); return o; });
   const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([JSON.stringify({ app: 'cakeday', items }, null, 2)], { type: 'application/json' })), download: 'cakeday-backup.json' });
   a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-  setPref('lastBackup', String(Date.now())); toast(`Exported ${items.length}`); render(); refreshSettings();
+  setPref('lastBackup', String(Date.now())); toast(tr('Exported {n}', { n: items.length })); render(); refreshSettings();
 }
 $('#export').onclick = exportJSON;
+$('#import').onclick = () => $('#file').click();
+$('#file').onchange = async e => {
+  const f = e.target.files[0]; e.target.value = ''; if (!f) return;
+  try { await importItems(JSON.parse(await f.text()).items || []); } catch { toast(tr('Not a valid backup file')); }
+};
 
 function exportICS() {
   const ics = s => String(s).replace(/[\\;,]/g, m => '\\' + m).replace(/\n/g, '\\n'), ymd = d => iso(d).replace(/-/g, '');
+  const [hh, mm] = rtime(), mins = hh * 60 + (mm || 0);
   const stamp = new Date().toISOString().replace(/[-:]|\.\d+/g, ''), out = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//CakeDay//EN', 'CALSCALE:GREGORIAN'];
   const ev = (uid, date, r, rrule) => {
     const L = leadOf(r);
-    out.push('BEGIN:VEVENT', `UID:${uid}@cakeday`, `DTSTAMP:${stamp}`, `DTSTART;VALUE=DATE:${ymd(date)}`, `DTEND;VALUE=DATE:${ymd(addDays(date, 1))}`, `SUMMARY:${ics(r.name + '’s birthday')}`);
+    out.push('BEGIN:VEVENT', `UID:${uid}@cakeday`, `DTSTAMP:${stamp}`, `DTSTART;VALUE=DATE:${ymd(date)}`, `DTEND;VALUE=DATE:${ymd(addDays(date, 1))}`, `SUMMARY:${ics(tr('{name}’s birthday', { name: r.name }))}`);
     if (r.note) out.push('DESCRIPTION:' + ics(r.note));
     if (rrule) out.push(rrule);
-    out.push('TRANSP:TRANSPARENT', 'BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${ics(r.name)}`, `TRIGGER:${!L ? 'PT9H' : `-P${L - 1}DT15H`}`, 'END:VALARM', 'END:VEVENT');
+    out.push('TRANSP:TRANSPARENT', 'BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${ics(r.name)}`, `TRIGGER:${!L ? `PT${mins}M` : `-PT${L * 1440 - mins}M`}`, 'END:VALARM', 'END:VEVENT');
   };
   rows.filter(r => r.cal === 'greg').forEach(r => ev(r.id, r.next, r, 'RRULE:FREQ=YEARLY' + (r.m === 2 && r.d === 29 ? ';BYMONTH=2;BYMONTHDAY=28,29;BYSETPOS=-1' : '')));
   const per = rows.filter(r => r.cal === 'persian'), t = today();   // Persian dates: one event per year for the next 10 years
@@ -827,29 +1019,179 @@ function exportICS() {
   out.push('END:VCALENDAR');
   const fold = l => l.length > 73 ? l.match(/.{1,73}/gu).join('\r\n ') : l;
   const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([out.map(fold).join('\r\n')], { type: 'text/calendar' })), download: 'cakeday.ics' });
-  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); toast('Calendar file saved');
+  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); toast(tr('Calendar file saved'));
 }
 $('#ics').onclick = exportICS;
 
-$('#import').onclick = () => $('#file').click();
-const sane = x => x && typeof x.name === 'string' && x.name.trim() && DAYS[x.cal] && Number.isInteger(x.m) && x.m >= 1 && x.m <= 12 && Number.isInteger(x.d) && x.d >= 1 && x.d <= DAYS[x.cal][x.m - 1];
-const norm = x => ({ name: x.name.trim().slice(0, 60), cal: x.cal, y: Number.isInteger(x.y) ? x.y : null, m: x.m, d: x.d,
-  note: typeof x.note === 'string' && x.note.trim() ? x.note.trim().slice(0, 140) : null, tag: TAGS.includes(x.tag) ? x.tag : null,
-  color: Number.isInteger(x.color) && x.color >= 0 && x.color < 5 ? x.color : null, remind: ['off', '0', '1', '3', '7'].includes(x.remind) ? x.remind : null,
-  photo: typeof x.photo === 'string' && x.photo.startsWith('data:image/') && x.photo.length < 80000 ? x.photo : null, wished: null });
-const dupKey = x => [x.name.toLowerCase(), x.cal, x.m, x.d, x.y || ''].join('|');
-$('#file').onchange = async e => {
+// Contacts: read birthdays from a .vcf file (export contacts from your phone or Google/iCloud)
+function parseVCF(text) {
+  text = text.replace(/\r\n?/g, '\n').replace(/\n[ \t]/g, '');
+  const out = [];
+  for (const card of text.split(/BEGIN:VCARD/i).slice(1)) {
+    let name = '', bd = '';
+    for (const line of card.split('\n')) {
+      const m = line.match(/^(?:[\w-]+\.)?([A-Za-z-]+)(?:;[^:]*)?:(.*)$/); if (!m) continue;
+      const k = m[1].toUpperCase(), v = m[2].trim().replace(/\\([,;])/g, '$1');
+      if (k === 'FN') name = v; else if (k === 'N' && !name) { const [l, f] = v.split(';'); name = [f, l].filter(Boolean).join(' ').trim(); } else if (k === 'BDAY') bd = v;
+    }
+    const b = bd.match(/^(?:(\d{4})-?|--)(\d{2})-?(\d{2})/); if (!name || !b) continue;
+    const y = b[1] ? +b[1] : null;
+    out.push({ name: name.slice(0, 60), cal: 'greg', y: y && y > 1700 ? y : null, m: +b[2], d: +b[3] });
+  }
+  return out;
+}
+$('#vcf').onclick = () => $('#vfile').click();
+$('#vfile').onchange = async e => {
   const f = e.target.files[0]; e.target.value = ''; if (!f) return;
+  const list = parseVCF(await f.text());
+  list.length ? await importItems(list, 'Imported from contacts: {n}') : toast(tr('No birthdays found in that file'));
+};
+
+// ---------- Device-to-device transfer (QR code / text code, no server) ----------
+const libs = {};
+const loadLib = src => new Promise((ok, fail) => { if (libs[src]) return ok(); const s = document.createElement('script'); s.src = src; s.onload = () => { libs[src] = 1; ok(); }; s.onerror = fail; document.head.append(s); });
+const b64u = u8 => { let s = ''; for (const b of u8) s += String.fromCharCode(b); return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''); };
+const unb64u = s => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), c => c.charCodeAt(0));
+async function pack(obj) {
+  const raw = new TextEncoder().encode(JSON.stringify(obj));
+  if (window.CompressionStream) return 'CD1Z' + b64u(new Uint8Array(await new Response(new Blob([raw]).stream().pipeThrough(new CompressionStream('gzip'))).arrayBuffer()));
+  return 'CD1R' + b64u(raw);
+}
+async function unpack(code) {
+  code = code.trim(); if (!code.startsWith('CD1')) throw new Error('bad');
+  let data = unb64u(code.slice(4));
+  if (code[3] === 'Z') data = new Uint8Array(await new Response(new Blob([data]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer());
+  return JSON.parse(new TextDecoder().decode(data));
+}
+let sendCode = '';
+$('#t-send').onclick = async () => {
+  const items = rows.map(r => { const { id, wished, photo, ...o } = clean(r); return o; });
+  if (!items.length) return toast(tr('Nothing to send yet'));
+  sendCode = await pack({ items }); $('#qr').innerHTML = ''; $('#qr-note').textContent = ''; $('#xs').showModal();
   try {
-    const valid = (JSON.parse(await f.text()).items || []).filter(sane).map(norm), seen = new Set(rows.map(dupKey));
-    const list = valid.filter(x => { const k = dupKey(x); if (seen.has(k)) return false; seen.add(k); return true; });
-    await run('readwrite', s => { list.forEach(i => s.add(i)); });
-    render(); toast(`Imported ${list.length}${valid.length - list.length ? ` · skipped ${valid.length - list.length} duplicates` : ''}`);
-  } catch { toast('Not a valid backup file'); }
+    await loadLib('qrcode.min.js'); const q = qrcode(0, 'L'); q.addData(sendCode, 'Byte'); q.make();
+    $('#qr').innerHTML = q.createSvgTag({ scalable: true, margin: 0 }); $('#qr-note').textContent = tr('Scan with CakeDay on the new device: Settings, then Receive.');
+  } catch { $('#qr').hidden = true; $('#qr-note').textContent = tr('Too many birthdays for a QR code. Copy the code instead.'); }
+};
+const copyText = async t => { try { await navigator.clipboard.writeText(t); } catch { const a = Object.assign(document.createElement('textarea'), { value: t }); document.body.append(a); a.select(); document.execCommand('copy'); a.remove(); } toast(tr('Code copied')); };
+$('#xs-copy').onclick = () => copyText(sendCode);
+$('#xs-share').onclick = async () => { if (navigator.share) { try { await navigator.share({ text: sendCode }); } catch {} } else copyText(sendCode); };
+$('#xs').addEventListener('close', () => { $('#qr').hidden = false; sendCode = ''; });
+
+let stream = null, scanning = false;
+const stopScan = () => { scanning = false; stream?.getTracks().forEach(t => t.stop()); stream = null; $('#cam').hidden = true; };
+async function receive(code) {
+  try { const data = await unpack(code); closeAnim($('#xr')); await importItems(data.items || []); } catch { toast(tr('That code is not valid')); }
+}
+$('#t-recv').onclick = () => { $('#xr-code').value = ''; $('#xr').showModal(); };
+$('#xr').addEventListener('close', stopScan);
+$('#xr-go').onclick = () => receive($('#xr-code').value);
+$('#xr-scan').onclick = async () => {
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+    const v = $('#vid'); v.srcObject = stream; await v.play(); $('#cam').hidden = false; scanning = true;
+    const det = window.BarcodeDetector ? new BarcodeDetector({ formats: ['qr_code'] }) : null; if (!det) await loadLib('jsqr.min.js');
+    const cv = document.createElement('canvas'), cx = cv.getContext('2d', { willReadFrequently: true });
+    const tick = async () => {
+      if (!scanning) return;
+      if (v.readyState >= 2 && v.videoWidth) {
+        let txt = null;
+        if (det) { try { txt = (await det.detect(v))[0]?.rawValue; } catch {} }
+        else { cv.width = v.videoWidth; cv.height = v.videoHeight; cx.drawImage(v, 0, 0); const im = cx.getImageData(0, 0, cv.width, cv.height), r = jsQR(im.data, im.width, im.height); txt = r && r.data; }
+        if (txt && txt.startsWith('CD1')) { stopScan(); await receive(txt); return; }
+      }
+      requestAnimationFrame(tick);
+    };
+    tick();
+  } catch { stopScan(); toast(tr('Camera not available. Paste the code instead.')); }
+};
+
+// ---------- App lock (PIN + optional Face ID / fingerprint) ----------
+const lockDlg = $('#lock'), lockOn = () => !!pref('lockH');
+let lockMode = null, lockCb = null, pinBuf = '', pinTmp = null, fails = 0, lockUntil = 0;
+const sha = async s => { try { return [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)))].map(b => b.toString(16).padStart(2, '0')).join(''); } catch { let h = 5381; for (const c of s) h = (h * 33 + c.charCodeAt(0)) >>> 0; return String(h); } };
+const savePin = async pin => { const salt = b64u(crypto.getRandomValues(new Uint8Array(12))); setPref('lockS', salt); setPref('lockH', await sha(salt + pin)); };
+const checkPin = async pin => (await sha((pref('lockS') || '') + pin)) === pref('lockH');
+$('#pad').innerHTML = ['1','2','3','4','5','6','7','8','9','bio','0','b'].map(k => k === 'bio' ? `<button class="x" id="pad-bio" data-k="bio" aria-label="Biometrics">${ic('scan')}</button>` : k === 'b' ? `<button data-k="b" aria-label="Delete">${ic('back')}</button>` : `<button data-k="${k}">${nd(k)}</button>`).join('');
+function paintLock(msg) {
+  const titles = { unlock: 'Enter PIN', verify: 'Enter current PIN', set: pinTmp ? 'Confirm PIN' : 'Create a PIN' };
+  $('#lock-t').textContent = tr(titles[lockMode]); $('#lock-s').textContent = msg || '';
+  $$('#pins i').forEach((d, i) => d.classList.toggle('on', i < pinBuf.length));
+  $('#lock-cancel').hidden = lockMode === 'unlock'; $('#lock-forgot').hidden = lockMode !== 'unlock';
+  $('#pad-bio').classList.toggle('x', !(lockMode === 'unlock' && pref('bio')));
+}
+function showLock(mode, cb) { lockMode = mode; lockCb = cb || null; pinBuf = ''; pinTmp = null; paintLock(); if (!lockDlg.open) lockDlg.showModal(); if (mode === 'unlock' && pref('bio')) tryBio(true); }
+function closeLock() { if (lockDlg.open) lockDlg.close(); }
+const shake = msg => { const p = $('#pins'); p.classList.remove('shake'); void p.offsetWidth; p.classList.add('shake'); paintLock(tr(msg)); };
+async function pinKey(k) {
+  if (performance.now() < lockUntil) return;
+  if (k === 'b') pinBuf = pinBuf.slice(0, -1); else if (pinBuf.length < 4) pinBuf += k;
+  paintLock(); if (pinBuf.length < 4) return;
+  const pin = pinBuf; pinBuf = '';
+  if (lockMode === 'set') {
+    if (!pinTmp) { pinTmp = pin; paintLock(); return; }
+    if (pin !== pinTmp) { pinTmp = null; shake('PINs did not match'); return; }
+    await savePin(pin); closeLock(); toast(tr('App lock is on')); refreshSettings(); return;
+  }
+  if (await checkPin(pin)) { fails = 0; const cb = lockCb; closeLock(); cb?.(); }
+  else { fails++; shake('Wrong PIN'); if (fails >= 5) { fails = 0; lockUntil = performance.now() + 30000; paintLock(tr('Too many tries. Wait 30 seconds.')); } }
+}
+$('#pad').onclick = e => { const b = e.target.closest('button'); if (!b) return; b.dataset.k === 'bio' ? tryBio() : pinKey(b.dataset.k); };
+$('#lock-cancel').onclick = closeLock;
+lockDlg.addEventListener('cancel', e => { e.preventDefault(); if (lockMode !== 'unlock') closeLock(); });
+$('#lock-forgot').onclick = async () => {
+  if (!confirm(tr('Erase all birthdays and remove the lock?'))) return;
+  await run('readwrite', s => s.clear()); ['lockH', 'lockS', 'bio'].forEach(k => setPref(k, null)); closeLock(); await render(); refreshSettings();
+};
+async function tryBio(auto) {
+  try {
+    const id = Uint8Array.from(atob(pref('bio')), c => c.charCodeAt(0));
+    await navigator.credentials.get({ publicKey: { challenge: crypto.getRandomValues(new Uint8Array(32)), allowCredentials: [{ type: 'public-key', id }], userVerification: 'required', timeout: 60000 } });
+    const cb = lockCb; closeLock(); cb?.();
+  } catch { if (!auto) toast(tr('Biometric check failed')); }
+}
+async function enrollBio() {
+  try {
+    if (!window.PublicKeyCredential || !(await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable())) return toast(tr('Biometrics are not available on this device'));
+    const cred = await navigator.credentials.create({ publicKey: { challenge: crypto.getRandomValues(new Uint8Array(32)), rp: { name: 'CakeDay' }, user: { id: crypto.getRandomValues(new Uint8Array(16)), name: 'cakeday', displayName: 'CakeDay' },
+      pubKeyCredParams: [{ type: 'public-key', alg: -7 }, { type: 'public-key', alg: -257 }], authenticatorSelection: { authenticatorAttachment: 'platform', userVerification: 'required' }, timeout: 60000 } });
+    setPref('bio', btoa(String.fromCharCode(...new Uint8Array(cred.rawId)))); toast(tr('Biometric unlock is on')); refreshSettings();
+  } catch { toast(tr('Could not set up biometrics')); }
+}
+function paintLockUI() {
+  $('#lock-set').hidden = lockOn(); $('#lock-btns').hidden = !lockOn();
+  $('#lock-bio').hidden = !lockOn() || !window.PublicKeyCredential; $('#bio-l').textContent = tr(pref('bio') ? 'Turn off biometrics' : 'Use Face ID or fingerprint');
+}
+$('#lock-set').onclick = () => showLock('set');
+$('#lock-change').onclick = () => showLock('verify', () => showLock('set'));
+$('#lock-off').onclick = () => showLock('verify', () => { ['lockH', 'lockS', 'bio'].forEach(k => setPref(k, null)); toast(tr('App lock is off')); refreshSettings(); });
+$('#lock-bio').onclick = () => { if (pref('bio')) { setPref('bio', null); refreshSettings(); } else enrollBio(); };
+let hiddenAt = 0;
+document.addEventListener('visibilitychange', () => {   // re-lock after 15 seconds away
+  if (document.hidden) hiddenAt = Date.now();
+  else if (lockOn() && hiddenAt && Date.now() - hiddenAt > 15000 && !lockDlg.open) showLock('unlock');
+});
+
+// ---------- Delete all data (type-to-confirm) ----------
+const wipe = $('#wipe');
+$('#wipe-open').onclick = () => { $('#wipe-in').value = ''; $('#wipe-yes').disabled = true; $('#wipe-t').textContent = tr('This permanently deletes all your birthdays ({n}) and reminder history from this device. It cannot be undone.', { n: rows.length }); wipe.showModal(); };
+$('#wipe-in').oninput = e => { $('#wipe-yes').disabled = e.target.value.trim().toUpperCase() !== 'DELETE'; };
+$('#wipe-no').onclick = () => closeAnim(wipe);
+$('#wipe-ex').onclick = () => exportJSON();
+$('#wipe-yes').onclick = async () => {
+  await run('readwrite', s => s.clear());
+  ['notified', 'lastBackup', 'snooze', 'confetti'].forEach(k => setPref(k, null)); setPref('firstUse', String(Date.now()));
+  try { const reg = await navigator.serviceWorker?.ready; (await reg.getNotifications())?.forEach(n => n.close()); } catch {}
+  closeAnim(wipe); cm.sel = null; await render(); refreshSettings(); toast(tr('All data deleted'));
 };
 
 // ---------- Misc ----------
-let tt; function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), 2200); }
+let tt;
+function toast(msg, act) {
+  const t = $('#toast'); t.textContent = msg;
+  if (act) { const b = document.createElement('button'); b.textContent = act.label; b.onclick = () => { t.classList.remove('on'); act.fn(); }; t.append(b); }
+  t.classList.toggle('act', !!act); t.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => t.classList.remove('on'), act ? 6000 : 2200);
+}
 function show(t) {
   document.body.dataset.view = t;
   $$('.view').forEach(v => v.hidden = v.id !== t);
@@ -859,40 +1201,16 @@ function show(t) {
   if (t === 'calendar') { seg.mcal(); renderCal(); }
 }
 $$('.tab').forEach(b => b.onclick = () => show(b.dataset.tab));
-// Offline + auto-update: a new version waits until you tap Update, so nothing is lost mid-edit.
-let updating = false;
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.addEventListener('controllerchange', () => { paintInstall(); if (updating) location.reload(); });
-  navigator.serviceWorker.register('sw.js').then(reg => {
-    const offer = w => { if (!navigator.serviceWorker.controller) return; $('#upd').hidden = false; $('#upd-b').onclick = () => { updating = true; w.postMessage('SKIP_WAITING'); }; };
-    if (reg.waiting) offer(reg.waiting);
-    reg.addEventListener('updatefound', () => { const w = reg.installing; w && w.addEventListener('statechange', () => { if (w.state === 'installed') offer(w); }); });
-    const check = () => reg.update().catch(() => {});
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) check(); }); setInterval(check, 36e5); check();
-  }).catch(() => {});
-}
+document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
+setInterval(render, 18e5);
 document.addEventListener('scroll', e => {   // scrollbars appear only while scrolling
   const t = e.target; if (t.nodeType !== 1 || !(t.classList.contains('scroll') || t.id === 'full')) return;
   t.classList.add('scrolling'); clearTimeout(t._st); t._st = setTimeout(() => t.classList.remove('scrolling'), 900);
 }, true);
 
-// Delete all data (type-to-confirm)
-const wipe = $('#wipe');
-$('#wipe-open').onclick = () => { $('#wipe-in').value = ''; $('#wipe-yes').disabled = true; $('#wipe-t').textContent = `This permanently deletes ${rows.length} birthday${rows.length === 1 ? '' : 's'} and your reminder history from this device. It cannot be undone.`; wipe.showModal(); };
-$('#wipe-in').oninput = e => { $('#wipe-yes').disabled = e.target.value.trim().toUpperCase() !== 'DELETE'; };
-$('#wipe-no').onclick = () => closeAnim(wipe);
-$('#wipe-ex').onclick = () => exportJSON();
-$('#wipe-yes').onclick = async () => {
-  await run('readwrite', s => s.clear());
-  ['notified', 'lastBackup', 'snooze', 'confetti'].forEach(k => setPref(k, null)); setPref('firstUse', String(Date.now()));
-  try { const reg = await navigator.serviceWorker?.ready; (await reg.getNotifications())?.forEach(n => n.close()); } catch {}
-  closeAnim(wipe); cm.sel = null; await render(); refreshSettings(); toast('All data deleted');
-};
-document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
-setInterval(render, 18e5);
-
 const q0 = new URLSearchParams(location.search);
-paintIcons(); applyTheme(); show(['all', 'calendar', 'settings'].includes(q0.get('tab')) ? q0.get('tab') : 'home');
+paintIcons(); applyA11y(); show(['all', 'calendar', 'settings'].includes(q0.get('tab')) ? q0.get('tab') : 'home');
+if (lockOn()) showLock('unlock');
 render().then(() => {   // one confetti burst per day, when a birthday is today
   if (booted) return; booted = true;
   if (rows.some(r => r.n === 0 && !r.wishedNow) && pref('confetti') !== iso(new Date())) { setPref('confetti', iso(new Date())); setTimeout(confetti, 500); }
